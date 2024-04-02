@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artist-information</title>
+    <link rel="stylesheet" href="/static/artistInform/artistInform.css">
+    <link rel="stylesheet" href="/static/artistInform/nav_top3.css">
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Starbucks" />
+    <meta property="og:title" content="Starbucks Coffee Korea" />
+    <meta property="og:description" content="스타벅스는 세계에서 가장 큰 다국적 커피 전문점으로, 64개국에서 총 23,187개의 매점을 운영하고 있습니다." />
+    <meta property="og:image" content="./images/starbucks_seo.jpg" />
+    <meta property="og:url" content="https://starbucks.co.kr" />
+
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:site" content="Starbucks" />
+    <meta property="twitter:title" content="Starbucks Coffee Korea" />
+    <meta property="twitter:description" content="스타벅스는 세계에서 가장 큰 다국적 커피 전문점으로, 64개국에서 총 23,187개의 매점을 운영하고 있습니다." />
+    <meta property="twitter:image" content="./images/starbucks_seo.jpg" />
+    <meta property="twitter:url" content="https://starbucks.co.kr" />
+
+    <link rel="icon" href="./favicon.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<!--    <link rel="stylesheet" href="./css/main.css" />-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!--    <script defer src="./js/main.js"></script>-->
+</head>
+
+<body>
+        <header id="header">
+            <a href="/"><img class="logo display-flex" src="/static/artistInform/RestArt.png"></a>
+
+                <ul class="main-menu">
+                    <li class="item">
+                        <div class="item__name"> 작가 </div>
+                    </li>
+                    <li class="item">
+                        <div class="item__name"> 작품보러가기 </div>
+                    </li>
+                    <li class="item">
+                        <div class="item__name">AI 작품추천</div>
+                    </li>
+                    <li class="nav__item item">
+                        <div class="item__name">커뮤니티</div>
+                    </li>
+                    <li class="nav__item item">
+                        <div class="item__name">아트컨설팅</div>
+                    </li>
+                    <li class="nav__item item">
+                        <div class="item__name">회사소개</div>
+                    </li>
+                    <div class="item__contents">
+                        <div class="contents__menu1">
+                            <ul class="inner2">
+                                <li class="contents__menu1-1"><a href="artistInform" class="menu__hover">작가소개</a></li>
+                                <li class="contents__menu1-1"><a href="artenroll" class="menu__hover">작품등록</a></li>
+                            </ul>
+                        </div>
+                        <div class="contents__menu2">
+                            <ul class="inner2">
+                                <li class="contents__menu2-1"><a href="/gallery" class="menu__hover">갤러리</a></li>
+                                <li class="contents__menu2-1"><a href="#online" class="menu__hover">온라인전시</a></li>
+                            </ul>
+                        </div>
+                        <div class="contents__menu3">
+                            <ul class="inner2">
+                                <li class="contents__menu3-1"><a href="#online" class="menu__hover">풍수지리</a></li>
+                                <li class="contents__menu3-1"><a href="#online" class="menu__hover">AI작품추천</a></li>
+                                <li class="contents__menu3-1"><a href="#AR" class="menu__hover">AR인테리어</a></li>
+                            </ul>
+                        </div>
+                        <div class="contents__menu4">
+                            <ul class="inner2">
+                                <li class="contents__menu4-1"><a href="exhibition" class="menu__hover">전시정보</a></li>
+                                <li class="contents__menu4-1"><a href="#online" class="menu__hover">인테리어공유</a></li>
+                                <li class="contents__menu4-1"><a href="#AR" class="menu__hover">리뷰</a></li>
+                            </ul>
+                        </div>
+                        <div class="contents__menu5">
+                            <ul class="inner2">
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="contents__menu6">
+                            <ul class="inner2">
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </ul>
+                <i class="ri-close-line nav__close" id="nav-close"></i>
+
+        <div class="nav__menu2 display-flex" id="nav-menu2">
+            <div id="search-ranking">
+                <h2 class="blind">실시간 검색어</h2>
+                <div class="current-rank">
+                    <span class="rank-number">1</span>
+                    <span class="rank-title">김현수</span>
+                </div>
+                <ul>
+                    <li>
+                        <span class="rank-number">1</span>
+                        <span class="rank-title">김현수</span>
+                    </li>
+                    <li>
+                        <span class="rank-number">2</span>
+                        <span class="rank-title">이민혁</span>
+                    </li>
+                    <li>
+                        <span class="rank-number">3</span>
+                        <span class="rank-title">이상준</span>
+                    </li>
+                    <li>
+                        <span class="rank-number">4</span>
+                        <span class="rank-title">이지원</span>
+                    </li>
+                    <li>
+                        <span class="rank-number">5</span>
+                        <span class="rank-title">이윤호</span>
+                    </li>
+                </ul>
+
+            </div>
+            <ul class="type1">
+                <li class="login2 nav__item">
+                    <div class="search">
+                      <input class="search-box" type="text" />
+                      <div class="material-symbols-outlined">search</div>
+                    </div>
+                </li>
+                <li class="login2 nav__item login3">
+                    <a href="login" class="nav__link2">로그인</a>
+                </li>
+                <li class="nonon login3">
+                    |
+                </li>
+                <li class="new nav__item login3">
+                    <a href="signpage" class="nav__link2">회원가입</a>
+                </li>
+            </ul>
+        </div>
+        <script>
+              const searchEl = document.querySelector(".search");
+                // const searchInputEl = document.querySelector('.search input');
+                const searchInputEl = searchEl.querySelector("input");
+
+                searchEl.addEventListener("click", function () {
+                  searchInputEl.focus(); // input 요소에 포커스 실행
+                });
+
+                searchInputEl.addEventListener("focus", function () {
+                  searchEl.classList.add("focused");
+                  searchInputEl.setAttribute("placeholder", "통합검색");
+                });
+
+                searchInputEl.addEventListener("blur", function () {
+                  searchEl.classList.remove("focused");
+                  searchInputEl.setAttribute("placeholder", "");
+                });
+
+                const badgeEl = document.querySelector("header .badges");
+
+                window.addEventListener(
+                  "scroll",
+                  _.throttle(function () {
+                    console.log(window.scrollY);
+                    if (window.scrollY > 500) {
+                      // 배지 숨기기
+                      // gsap.to(애니매이션 적용 요소, 지속시간, 옵션); / 옵션은 객체 데이터 사용 가능{}
+                      gsap.to(badgeEl, 0.6, {
+                        opacity: 0,
+                        display: "none"
+                      });
+                    } else {
+                      // 배지 보이기
+                      gsap.to(badgeEl, 0.6, {
+                        opacity: 1,
+                        display: "block"
+                      });
+                    }
+                  }, 300)
+                );
+                // _.throttle(함수, 시간)
+
+                const fadeEls = document.querySelectorAll(".visual .fade-in");
+                fadeEls.forEach(function (fadeEl, index) {
+                  // gsap.to(애니매이션 적용 요소, 지속시간, 옵션);
+                  gsap.to(fadeEl, 1, {
+                    delay: (index + 1) * 0.7, // 0.7, 1.4, 2.1, 2.7s
+                    opacity: 1
+                  });
+                });
+
+
+                // 실시간 랭킹 자바
+                window.onload = function () {
+                    var currentRank = document.querySelector("#search-ranking .current-rank");
+                    var rankList = document.querySelector("#search-ranking ul");
+                    var rankItems = rankList.querySelectorAll("li");
+                    var currentIndex = 0;
+
+                    function showNextRank() {
+                        currentRank.innerHTML = rankItems[currentIndex].innerHTML;
+                        currentIndex = (currentIndex + 1) % rankItems.length;
+                    }
+
+                    // 매 3초마다 다음 순위 표시
+                    setInterval(showNextRank, 2500);
+                };
+        </script>
+    </header>
+    <div class="nav__toggle" id="nav-toggle">
+        <i class="ri-function-line"></i>
+    </div>
+
+    <div class="main__part display-flex">
+        <div class="author_main">
+            <h1>작가 소개</h1>
+        </div>
+        <div class="section_main1">
+            <ul class="section_main1-1">
+                <li class="section_menu1"><a href="#">가나다순</a></li>
+                <li class="section_menu2"><a href="#">조회순</a></li>
+                <li class="section_menu3"><a href="#">판매순</a></li>
+            </ul>
+        </div>
+    </div>
+    <main id="main">
+        <div class="display-flex2">
+            <div class="instagram position-relative">
+                <img class="instagram_author display-flex2" src="/static/artistInform/박환 작가님.png">
+                <h4 class="instagram_author_name display_flex2">박환</h4>
+                <img class="instagram_picture display-flex2" src="/static/artistInform/박환-고요.png">
+                <div class="instagram_sub display-flex2">
+                    <label for="chk_modal3" class="btn">
+                       <img class="open_modal instagram_sub1" src="/static/artistInform/artist_img.png">
+                    </label>
+                    <label for="chk_modal3" class="btn">
+                       <img class="open_modal instagram_sub2" src="/static/artistInform/exhibition.png">
+                    </label>
+                    <label for="chk_modal3" class="btn">
+                       <img class="open_modal instagram_sub3" src="/static/artistInform/shopping.png">
+                    </label>
+                </div>
+                <div class="instagram_ment display_flex2">
+                    <h5 class="instagram_ment1">작가 소개</h5>
+                    <h5 class="instagram_ment2">전시회 정보</h5>
+                    <h5 class="instagram_ment3">작품 관람</h5>
+                </div>
+            </div>
+            <div class="instagram position-relative">
+                <img class="instagram_author display-flex2" src="/static/artistInform/임경식.png">
+                <h4 class="instagram_author_name display_flex2">임경식</h4>
+                <img class="instagram_picture display-flex2" src="/static/artistInform/임경식-꿈을 꾸다.png">
+                <div class="instagram_sub display-flex2">
+                    <label for="chk_modal2" class="btn">
+                       <img class="open_modal instagram_sub1" src="/static/artistInform/artist_img.png">
+                    </label>
+                    <label for="chk_modal2" class="btn">
+                       <img class="open_modal instagram_sub2" src="/static/artistInform/exhibition.png">
+                    </label>
+                    <label for="chk_modal2" class="btn">
+                       <img class="open_modal instagram_sub3" src="/static/artistInform/shopping.png">
+                    </label>
+                </div>
+                <div class="instagram_ment display_flex2">
+                    <h5 class="instagram_ment1">작가 소개</h5>
+                    <h5 class="instagram_ment2">전시회 정보</h5>
+                    <h5 class="instagram_ment3">작품 관람</h5>
+                </div>
+            </div>
+            <div class="instagram position-relative">
+                <img class="instagram_author display-flex2" src="/static/artistInform/오순이 작가님.jpg">
+                <h4 class="instagram_author_name display_flex2">오순이</h4>
+                <img class="instagram_picture display-flex2" src="/static/artistInform/오순이-내 마음의 풍경.jpg">
+                <div class="instagram_sub display-flex2">
+                    <label for="chk_modal" class="btn">
+                       <img class="open_modal instagram_sub1" src="/static/artistInform/artist_img.png">
+                    </label>
+                    <label for="chk_modal" class="btn">
+                       <img class="open_modal instagram_sub2" src="/static/artistInform/exhibition.png">
+                    </label>
+                    <label for="chk_modal" class="btn">
+                       <img class="open_modal instagram_sub3" src="/static/artistInform/shopping.png">
+                    </label>
+                    <!-- <img class="instagram_sub1" src="artist_img.png">
+                    <img class="instagram_sub2" src="exhibition.png">
+                    <img class="instagram_sub3" src="shopping.png"> -->
+                </div>
+                <div class="instagram_ment display_flex2">
+                    <h5 class="instagram_ment1">작가 소개</h5>
+                    <h5 class="instagram_ment2">전시회 정보</h5>
+                    <h5 class="instagram_ment3">작품 관람</h5>
+                </div>
+            </div>
+        </div>
+    </main>
+    <input type="checkbox" id="chk_modal3">
+         <div id="modal_bg3" class="chk_modal">
+                 <label for="chk_modal3">
+                    <div id="close3">
+                        <span id="cross5"></span>
+                        <span  id="cross6"></span>
+                    </div>
+                </label>
+         </div>
+    <input type="checkbox" id="chk_modal2">
+         <div id="modal_bg2" class="chk_modal">
+                 <label for="chk_modal2">
+                    <div id="close2">
+                        <span id="cross3"></span>
+                        <span  id="cross4"></span>
+                    </div>
+                </label>
+         </div>
+    <input type="checkbox" id="chk_modal">
+         <div id="modal_bg" class="chk_modal">
+                 <label for="chk_modal">
+                    <div id="close">
+                        <span id="cross1"></span>
+                        <span  id="cross2"></span>
+                    </div>
+                </label>
+         </div>
+<!-- 오순이 작가님 정보 -->
+            <div class="modal">
+                <div class="title_area">
+                    <div class="titleArea">
+                        <p class="copy db-mo">ⓒ2020. <strong>오순이</strong>. All Rights Reserved. 작품이미지의 도용 및 무단 재배포를 금지합니다.</p>
+                        <h1 class="db-pc">작가 정보</h1>
+                    </div>
+                </div>
+                <div class="image_area">
+                    <img src="오순이 작가님.jpg" alt="thumb">
+                </div>
+                <div class="info_area">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th>
+                          작가명 | Arist
+                        </th>
+                        <td>
+                          오순이 | English name
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          데뷔 연도 | Year
+                        </th>
+                        <td>
+                          1985                </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          장르 | Genre
+                        </th>
+                        <td>
+                          회화 | Painting                  <a href="javascript:void(0);" onclick="market_link();" class="link">회화작품 모아보기</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          재료 | Medium
+                        </th>
+                        <td>
+                          캔버스에 유화 | Oil on canvas                </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          액자 | Frame
+                          <!--<div class="tooltip">
+                            <div class="tooltip_btn">!</div>
+                            <div class="tooltip_cont">
+                                                    이 작품은 액자가 되어 있지 않습니다.<br>
+                              고객님께서 액자를 원하실 경우, <br>
+                              20년 경력의 미술품 액자 업체와의 협력으로 액자 컨설팅을 해드리고 있습니다. <br>
+                              자세한 사항은 ‘액자 고르기’를 클릭해주세요.
+                                                  </div>
+                          </div> -->
+                        </th>
+                        <td>
+                          없음 | No <a href="javascript:void(0);" class="link" onclick="IscrollTo('#marketDetailView .frameGuide');">액자 고르기</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          크기 | Size
+                          <div class="tooltip">
+                            <div class="tooltip_btn">!</div>
+                            <div class="tooltip_cont">
+                              세로(Height) × 가로(Width) × 깊이(Depth)  순서
+                            </div>
+                          </div>
+                        </th>
+                        <td>
+                          53x45.5cm                   | <span class="eng">10호</span>                </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          배송비 | Shipping Cost
+                        </th>
+                        <td>
+                          10,000원                </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          배송방법 | Shipping
+                        </th>
+                        <td>
+                          택배배송
+                          <div class="tooltip">
+                            <div class="tooltip_btn">!</div>
+                            <div class="tooltip_cont">
+                              택배 배송이 가능한 작품들은 1만원의 포장 및 <br>
+                              배송료가 부과됩니다. 서울, 경기 수도권 지역에 <br>
+                              한해 영업일 기준 5~7일 소요됩니다.
+                            </div>
+                          </div>
+                          <a href="javascript:void(0);" class="link" onclick="IscrollTo('#marketDetailView .shipping01');">배송안내 바로가기</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+            <div class="modal2">
+                <div class="title_area">
+                    <div class="titleArea">
+                        <h1 class="db-pc">작품 둘러보기</h1>
+                    </div>
+                </div>
+                <div class="exhibition_area">
+                    <div class="exhibition1">
+                        <div class="instagram2 position-relative">
+                            <div class="instagram_inner"
+                            style="background-image:url(https://mfpa.co.kr/data/file/members/2949709144_AmwbTKG0_36f2f44be908f5760796ea4ad90e29ce0ae017e1.jpg)">
+                                <!-- <img class="instagram_picture2" src="박환-고요.png" width="230px" height="230px"> -->
+                            </div>
+
+                            <div class="picture_inform">
+                                <p class="art_name">내 마음의 풍경(2019)</p>
+                                <p class="art_feel">#구족화가 #동양화 #고요한 #정교한</p>
+                            </div>
+                        </div>
+                        <div class="instagram2 position-relative">
+                            <div class="instagram_inner"
+                            style="background-image:url(https://mfpa.co.kr/data/file/members/2949709144_FObpwYu6_543acc8d77e81043617e9df4d8198cc16ee7ceff.jpg); width=230px; height= 230px;">
+                                <!-- <img class="instagram_picture2" src="박환-고요.png" width="230px" height="230px"> -->
+                            </div>
+
+                            <div class="picture_inform">
+                                <p class="art_name">내 마음의 풍경(2016)</p>
+                                <p class="art_feel">#구족화가 #동양화 #세련된 #고요한</p>
+                            </div>
+                        </div>
+                        <div class="instagram2 position-relative">
+                            <div class="instagram_inner"
+                            style="background-image:url(https://mfpa.co.kr/data/file/members/2949709144_wIXq87by_a48a7b354166928d8d416048b974783d779043f1.jpg)">
+                                <!-- <img class="instagram_picture2" src="박환-고요.png" width="230px" height="230px"> -->
+                            </div>
+
+                            <div class="picture_inform">
+                                <p class="art_name">내 마음의 풍경(2020)</p>
+                                <p class="art_feel">#구족화가 #동양화 #부드러운 #편안함</p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+<!-- 임경식 작가님 정보 -->
+            <div class="modal3">
+                <div class="title_area">
+                    <div class="titleArea">
+                        <p class="copy db-mo">ⓒ2020. <strong>임경식</strong>. All Rights Reserved. 작품이미지의 도용 및 무단 재배포를 금지합니다.</p>
+                        <h1 class="db-pc">작가 정보</h1>
+                    </div>
+                </div>
+                <div class="image_area">
+                    <img src="임경식.png" alt="thumb">
+                </div>
+                <div class="info_area">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th>
+                          작가명 | Arist
+                        </th>
+                        <td>
+                          임경식 | English name
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          데뷔 연도 | Year
+                        </th>
+                        <td>
+                          1998                </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          장르 | Genre
+                        </th>
+                        <td>
+                          수체화 | Painting                  <a href="javascript:void(0);" onclick="market_link();" class="link">회화작품 모아보기</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          재료 | Medium
+                        </th>
+                        <td>
+                          캔버스에 유화 | Oil on canvas                </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          액자 | Frame
+                          <!--<div class="tooltip">
+                            <div class="tooltip_btn">!</div>
+                            <div class="tooltip_cont">
+                                                    이 작품은 액자가 되어 있지 않습니다.<br>
+                              고객님께서 액자를 원하실 경우, <br>
+                              20년 경력의 미술품 액자 업체와의 협력으로 액자 컨설팅을 해드리고 있습니다. <br>
+                              자세한 사항은 ‘액자 고르기’를 클릭해주세요.
+                                                  </div>
+                          </div> -->
+                        </th>
+                        <td>
+                          없음 | No <a href="javascript:void(0);" class="link" onclick="IscrollTo('#marketDetailView .frameGuide');">액자 고르기</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          크기 | Size
+                          <div class="tooltip">
+                            <div class="tooltip_btn">!</div>
+                            <div class="tooltip_cont">
+                              세로(Height) × 가로(Width) × 깊이(Depth)  순서
+                            </div>
+                          </div>
+                        </th>
+                        <td>
+                          53x45.5cm                   | <span class="eng">10호</span>                </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          배송비 | Shipping Cost
+                        </th>
+                        <td>
+                          10,000원                </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          배송방법 | Shipping
+                        </th>
+                        <td>
+                          택배배송
+                          <div class="tooltip">
+                            <div class="tooltip_btn">!</div>
+                            <div class="tooltip_cont">
+                              택배 배송이 가능한 작품들은 1만원의 포장 및 <br>
+                              배송료가 부과됩니다. 서울, 경기 수도권 지역에 <br>
+                              한해 영업일 기준 5~7일 소요됩니다.
+                            </div>
+                          </div>
+                          <a href="javascript:void(0);" class="link" onclick="IscrollTo('#marketDetailView .shipping01');">배송안내 바로가기</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+            <div class="modal4">
+                <div class="title_area">
+                    <div class="titleArea">
+                        <h1 class="db-pc">작품 둘러보기</h1>
+                    </div>
+                </div>
+                <div class="exhibition_area">
+                    <div class="exhibition1">
+                        <div class="instagram2 position-relative">
+                            <div class="instagram_inner"
+                            style="background-image:url(https://mfpa.co.kr/data/file/members/2949709144_4nt57eLO_b8716dc71fcaa956b1826b4429ef0dd3730ff4ba.jpg)">
+                                <!-- <img class="instagram_picture2" src="박환-고요.png" width="230px" height="230px"> -->
+                            </div>
+
+                            <div class="picture_inform">
+                                <p class="art_name">결실</p>
+                                <p class="art_feel">#구족화가 #밝음 #다채로움 #편안함</p>
+                            </div>
+                        </div>
+                        <div class="instagram2 position-relative">
+                            <div class="instagram_inner"
+                            style="background-image:url(https://www.incheonin.com/news/photo/202209/90782_128045_5128.jpg)">
+                                <!-- <img class="instagram_picture2" src="박환-고요.png" width="230px" height="230px"> -->
+                            </div>
+
+                            <div class="picture_inform">
+                                <p class="art_name">꿈을 꾸다2</p>
+                                <p class="art_feel">#구족화가 #밝음 #경쾌함</p>
+                            </div>
+                        </div>
+                        <div class="instagram2 position-relative">
+                            <div class="instagram_inner"
+                            style="background-image:url(http://mustnews.co.kr/Files/34/Images/201906/269_530_3619.png)">
+                                <!-- <img class="instagram_picture2" src="박환-고요.png" width="230px" height="230px"> -->
+                            </div>
+
+                            <div class="picture_inform">
+                                <p class="art_name">꿈을 꾸다8</p>
+                                <p class="art_feel">#구족화가 #부드러운 #편안함</p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+<!-- 박환 작가님 정보 -->
+            <div class="modal5">
+                <div class="title_area">
+                    <div class="titleArea">
+                        <p class="copy db-mo">ⓒ2020. <strong>박 환</strong>. All Rights Reserved. 작품이미지의 도용 및 무단 재배포를 금지합니다.</p>
+                        <h1 class="db-pc">작가 정보</h1>
+                    </div>
+                </div>
+                <div class="image_area">
+                    <img src="박환 작가님.png" alt="thumb">
+                </div>
+                <div class="info_area">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th>
+                          작가명 | Arist
+                        </th>
+                        <td>
+                          박 환 | English name
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          데뷔 연도 | Year
+                        </th>
+                        <td>
+                          1978                </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          장르 | Genre
+                        </th>
+                        <td>
+                          판화 | Painting                  <a href="javascript:void(0);" onclick="market_link();" class="link">회화작품 모아보기</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          재료 | Medium
+                        </th>
+                        <td>
+                          캔버스에 유화 | Oil on canvas                </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          액자 | Frame
+                          <!--<div class="tooltip">
+                            <div class="tooltip_btn">!</div>
+                            <div class="tooltip_cont">
+                                                    이 작품은 액자가 되어 있지 않습니다.<br>
+                              고객님께서 액자를 원하실 경우, <br>
+                              20년 경력의 미술품 액자 업체와의 협력으로 액자 컨설팅을 해드리고 있습니다. <br>
+                              자세한 사항은 ‘액자 고르기’를 클릭해주세요.
+                                                  </div>
+                          </div> -->
+                        </th>
+                        <td>
+                          없음 | No <a href="javascript:void(0);" class="link" onclick="IscrollTo('#marketDetailView .frameGuide');">액자 고르기</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          크기 | Size
+                          <div class="tooltip">
+                            <div class="tooltip_btn">!</div>
+                            <div class="tooltip_cont">
+                              세로(Height) × 가로(Width) × 깊이(Depth)  순서
+                            </div>
+                          </div>
+                        </th>
+                        <td>
+                          53x45.5cm                   | <span class="eng">10호</span>                </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          배송비 | Shipping Cost
+                        </th>
+                        <td>
+                          10,000원                </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          배송방법 | Shipping
+                        </th>
+                        <td>
+                          택배배송
+                          <div class="tooltip">
+                            <div class="tooltip_btn">!</div>
+                            <div class="tooltip_cont">
+                              택배 배송이 가능한 작품들은 1만원의 포장 및 <br>
+                              배송료가 부과됩니다. 서울, 경기 수도권 지역에 <br>
+                              한해 영업일 기준 5~7일 소요됩니다.
+                            </div>
+                          </div>
+                          <a href="javascript:void(0);" class="link" onclick="IscrollTo('#marketDetailView .shipping01');">배송안내 바로가기</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+            <div class="modal6">
+                <div class="title_area">
+                    <div class="titleArea">
+                        <h1 class="db-pc">작품 둘러보기</h1>
+                    </div>
+                </div>
+                <div class="exhibition_area">
+                    <div class="exhibition1">
+                        <div class="instagram2 position-relative">
+                            <div class="instagram_inner"
+                            style="background-image:url(https://cdn.ablenews.co.kr/news/photo/201807/20180720_2_78142.jpg)">
+                                <!-- <img class="instagram_picture2" src="박환-고요.png" width="230px" height="230px"> -->
+                            </div>
+
+                            <div class="picture_inform">
+                                <p class="art_name">역사의 문</p>
+                                <p class="art_feel">#고요한 #정교한 #어두운</p>
+                            </div>
+                        </div>
+                        <div class="instagram2 position-relative">
+                            <div class="instagram_inner"
+                            style="background-image:url(https://www.kwnews.co.kr/photos/2019/12/18/2019121800000000057_l.jpg)">
+                                <!-- <img class="instagram_picture2" src="박환-고요.png" width="230px" height="230px"> -->
+                            </div>
+
+                            <div class="picture_inform">
+                                <p class="art_name">가로등</p>
+                                <p class="art_feel">#고요한 #강함 #희망</p>
+                            </div>
+                        </div>
+                        <div class="instagram2 position-relative">
+                            <div class="instagram_inner"
+                            style="background-image:url(http://www.emiji.net/img_up/shop_pds/emiji/2017/551495445385.jpg)">
+                                <!-- <img class="instagram_picture2" src="박환-고요.png" width="230px" height="230px"> -->
+                            </div>
+
+                            <div class="picture_inform">
+                                <p class="art_name">봄의 풍경</p>
+                                <p class="art_feel">#부드러운 #편안함 #밝음</p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+</body>
+</html>

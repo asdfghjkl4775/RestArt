@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RestArt Exhibition Page</title>
+    <link rel="stylesheet" href="/static/exhibition/exhibition.css">
+    <link rel="stylesheet" href="/static/exhibition/nav_top3.css">
+
+    <link rel="icon" href="./favicon.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!--    <script defer src="./js/main.js"></script>-->
+    <style>
+    .user-form, .author-form {
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <a href="/"><img class="logo display-flex" src="/static/exhibition/RestArt.png"></a>
+
+            <ul class="main-menu">
+                <li class="item">
+                    <div class="item__name"> 작가 </div>
+                </li>
+                <li class="item">
+                    <div class="item__name"> 작품보러가기 </div>
+                </li>
+                <li class="item">
+                    <div class="item__name">AI 작품추천</div>
+                </li>
+                <li class="nav__item item">
+                    <div class="item__name">커뮤니티</div>
+                </li>
+                <li class="nav__item item">
+                    <div class="item__name">아트컨설팅</div>
+                </li>
+                <li class="nav__item item">
+                    <div class="item__name">회사소개</div>
+                </li>
+                <div class="item__contents">
+                    <div class="contents__menu1">
+                        <ul class="inner2">
+                            <li class="contents__menu1-1"><a href="artistInform" class="menu__hover">작가소개</a></li>
+                            <li class="contents__menu1-1"><a href="artenroll" class="menu__hover">작품등록</a></li>
+                        </ul>
+                    </div>
+                    <div class="contents__menu2">
+                        <ul class="inner2">
+                            <li class="contents__menu2-1"><a href="/gallery" class="menu__hover">갤러리</a></li>
+                            <li class="contents__menu2-1"><a href="#online" class="menu__hover">온라인전시</a></li>
+                        </ul>
+                    </div>
+                    <div class="contents__menu3">
+                        <ul class="inner2">
+                            <li class="contents__menu3-1"><a href="#online" class="menu__hover">풍수지리</a></li>
+                            <li class="contents__menu3-1"><a href="#online" class="menu__hover">AI작품추천</a></li>
+                            <li class="contents__menu3-1"><a href="#AR" class="menu__hover">AR인테리어</a></li>
+                        </ul>
+                    </div>
+                    <div class="contents__menu4">
+                        <ul class="inner2">
+                            <li class="contents__menu4-1"><a href="exhibition" class="menu__hover">전시정보</a></li>
+                            <li class="contents__menu4-1"><a href="#online" class="menu__hover">인테리어공유</a></li>
+                            <li class="contents__menu4-1"><a href="#AR" class="menu__hover">리뷰</a></li>
+                        </ul>
+                    </div>
+                    <div class="contents__menu5">
+                        <ul class="inner2">
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="contents__menu6">
+                        <ul class="inner2">
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </ul>
+            <i class="ri-close-line nav__close" id="nav-close"></i>
+
+        <div class="nav__menu2 display-flex" id="nav-menu2">
+            <div id="search-ranking">
+                <h2 class="blind">실시간 검색어</h2>
+                <div class="current-rank">
+                    <span class="rank-number">1</span>
+                    <span class="rank-title">김현수</span>
+                </div>
+                <ul>
+                    <li>
+                        <span class="rank-number">1</span>
+                        <span class="rank-title">김현수</span>
+                    </li>
+                    <li>
+                        <span class="rank-number">2</span>
+                        <span class="rank-title">이민혁</span>
+                    </li>
+                    <li>
+                        <span class="rank-number">3</span>
+                        <span class="rank-title">이상준</span>
+                    </li>
+                    <li>
+                        <span class="rank-number">4</span>
+                        <span class="rank-title">이지원</span>
+                    </li>
+                    <li>
+                        <span class="rank-number">5</span>
+                        <span class="rank-title">이윤호</span>
+                    </li>
+                </ul>
+
+            </div>
+            <ul class="type1">
+                <li class="login2 nav__item">
+                    <div class="search">
+                      <input class="search-box" type="text" />
+                      <div class="material-symbols-outlined">search</div>
+                    </div>
+                </li>
+                <li class="login2 nav__item login3">
+                    <a href="login" class="nav__link2">로그인</a>
+                </li>
+                <li class="nonon login3">
+                    |
+                </li>
+                <li class="new nav__item login3">
+                    <a href="signpage" class="nav__link2">회원가입</a>
+                </li>
+            </ul>
+        </div>
+        <script>
+              const searchEl = document.querySelector(".search");
+                // const searchInputEl = document.querySelector('.search input');
+                const searchInputEl = searchEl.querySelector("input");
+
+                searchEl.addEventListener("click", function () {
+                  searchInputEl.focus(); // input 요소에 포커스 실행
+                });
+
+                searchInputEl.addEventListener("focus", function () {
+                  searchEl.classList.add("focused");
+                  searchInputEl.setAttribute("placeholder", "통합검색");
+                });
+
+                searchInputEl.addEventListener("blur", function () {
+                  searchEl.classList.remove("focused");
+                  searchInputEl.setAttribute("placeholder", "");
+                });
+
+                const badgeEl = document.querySelector("header .badges");
+
+                window.addEventListener(
+                  "scroll",
+                  _.throttle(function () {
+                    console.log(window.scrollY);
+                    if (window.scrollY > 500) {
+                      // 배지 숨기기
+                      // gsap.to(애니매이션 적용 요소, 지속시간, 옵션); / 옵션은 객체 데이터 사용 가능{}
+                      gsap.to(badgeEl, 0.6, {
+                        opacity: 0,
+                        display: "none"
+                      });
+                    } else {
+                      // 배지 보이기
+                      gsap.to(badgeEl, 0.6, {
+                        opacity: 1,
+                        display: "block"
+                      });
+                    }
+                  }, 300)
+                );
+                // _.throttle(함수, 시간)
+
+                const fadeEls = document.querySelectorAll(".visual .fade-in");
+                fadeEls.forEach(function (fadeEl, index) {
+                  // gsap.to(애니매이션 적용 요소, 지속시간, 옵션);
+                  gsap.to(fadeEl, 1, {
+                    delay: (index + 1) * 0.7, // 0.7, 1.4, 2.1, 2.7s
+                    opacity: 1
+                  });
+                });
+
+
+                // 실시간 랭킹 자바
+                window.onload = function () {
+                    var currentRank = document.querySelector("#search-ranking .current-rank");
+                    var rankList = document.querySelector("#search-ranking ul");
+                    var rankItems = rankList.querySelectorAll("li");
+                    var currentIndex = 0;
+
+                    function showNextRank() {
+                        currentRank.innerHTML = rankItems[currentIndex].innerHTML;
+                        currentIndex = (currentIndex + 1) % rankItems.length;
+                    }
+
+                    // 매 3초마다 다음 순위 표시
+                    setInterval(showNextRank, 2500);
+                };
+        </script>
+    </header>
+
+    <div class="information1 display-flex">
+        <h3 class="information1-1">전시 정보</h3>
+    </div>
+
+    <div class="information2 display-flex">
+        <div class="information2-1">
+            <button class="information2-2">정렬</button>
+            <div class="information2-3">
+                <button>가나다순</button>
+                <button>최신순</button>
+                <button>판매순</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="information3 display-flex">
+        <div class="information3-1">
+            <img  src="/static/exhibition/홍보1.jpg" alt="poster1">
+            <img  src="/static/exhibition/홍보2.jpg" alt="poster2">
+            <img  src="/static/exhibition/홍보3.jpg" alt="poster3">
+            <img  src="/static/exhibition/홍보4.jpg" alt="poster4">
+            <img  src="/static/exhibition/홍보5.jpg" alt="poster5">
+            <img  src="/static/exhibition/홍보6.jpg" alt="poster6">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        const information3 = document.querySelector('.information3-1');
+        let currentIndex = 0;
+        const slideCount = information3.children.length;
+        const slideWidth = 510; // 슬라이더의 너비를 맞춰주세요.
+        const slideInterval = 3000; // 3초 간격
+        setInterval(function() {
+            currentIndex = (currentIndex + 2) % slideCount;
+            information3.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        }, slideInterval);
+    });
+    </script>
+
+    <div class="information4_main">
+        <div class="information4">
+            <img class="information4-1" src="/static/exhibition/홍보7.jpg" alt="poster7">
+            <img class="information4-2" src="/static/exhibition/홍보8.jpg" alt="poster8">
+            <img class="information4-3" src="/static/exhibition/홍보9.jpg" alt="poster9">
+            <img class="information4-4" src="/static/exhibition/홍보10.jpg" alt="poster10">
+        </div>
+    </div>
+</body>
+</html>

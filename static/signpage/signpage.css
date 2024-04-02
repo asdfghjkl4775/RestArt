@@ -1,0 +1,399 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+body div {
+    font-family: 'Pretendard-Regular';
+}
+
+.mypage-display-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mypage-position-relative {
+    position: relative;
+}
+.mypage-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+}
+.inform_menu input {
+    padding: 15px 0;
+    margin: 0 10px;
+    border: none;
+    outline: none;
+    appearance: none;
+    width: 600px;
+    background-color: white;
+    font-size: 1em;
+    color: black;
+    border-bottom: 1px solid #FDB56D;
+    transition: #FDB56D 0.3s ease-in-out;
+}
+ul {
+    list-style: none;
+}
+.inform_menu {
+    margin-bottom: 10px;
+}
+
+.form-box{
+    position: absolute;
+    top: 25%;
+    left: 50%; /* 수평 중앙 정렬을 위해 추가 */
+    transform: translateX(-50%); /* 수평 중앙 정렬을 위해 추가 */
+}
+.form-box #discover_filter {
+    top: 300px;
+    left: 50%; /* 수평 중앙 정렬을 위해 추가 */
+    transform: translateX(-50%); /* 수평 중앙 정렬을 위해 추가 */
+}
+.wrapper {
+    position: absolute;
+    top: 16%;
+    left: 35%;
+}
+
+.mood_menu {
+    position: absolute;
+    top: 310px;
+
+}
+.mood1 {
+    position: absolute;
+    top: 320px;
+}
+.nav-button button{
+    padding: 15px 0;
+    margin: 0 10px;
+    border: none;
+    outline: none;
+    appearance: none;
+    width: 200px;
+    color: black;
+    font-size: 1em;
+    background-color: #FEEBCD;
+    border-radius: 20px;
+    transition: #FEEBCD 0.2s ease-in-out;
+}
+.nav-button1 {
+    position: absolute;
+    left: 20%;
+    top: 650px;
+}
+.nav-button2 {
+    position: absolute;
+    left: 20%;
+    top: 570px;
+}
+.nav-button1 button {
+    padding: 15px 0;
+    margin: 0 10px;
+    border: none;
+    outline: none;
+    appearance: none;
+    width: 400px;
+    color: black;
+    font-size: 1em;
+    background-color: #FEEBCD;
+    border-radius: 20px;
+    transition: #FEEBCD 0.2s ease-in-out;
+}
+
+.nav-button2 button {
+    padding: 15px 0;
+    margin: 0 10px;
+    border: none;
+    outline: none;
+    appearance: none;
+    width: 400px;
+    color: black;
+    font-size: 1em;
+    background-color: #FEEBCD;
+    border-radius: 20px;
+    transition: #FEEBCD 0.2s ease-in-out;
+}
+
+#discover_filter {
+    width: 1000px;
+    /*margin-top: 100px;*/
+    margin: 110px auto 0;
+    position: absolute;
+    overflow: hidden;
+    line-height: 1;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.cf {
+    display:block;
+}
+
+#ds-filter-container-pc .ds-filter-item {
+    border-top: 1px solid #dfdfdf;
+    border-right: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+    border-left: 7px solid #FDB56D;
+    float: left;
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+}
+#ds-filter-container-pc .ds-filter-item:nth-child(1), #ds-filter-container-pc .ds-filter-item:nth-child(2) {
+    width: 50%;
+}
+#ds-filter-container-pc .ds-filter-item:nth-child(3), #ds-filter-container-pc .ds-filter-item:nth-child(4) {
+    width: 50%;
+}
+#ds-filter-container-pc .ds-filter-item:nth-child(1) {
+    border-right: 0;
+}
+
+#ds-filter-container-pc .ds-filter-item.size {
+    height: 100px;
+    overflow: hidden;
+}
+
+#ds-filter-container-pc .ds-filter-item.shape, #ds-filter-container-pc .ds-filter-item.price {
+    height: 100px;
+}
+
+#ds-filter-container-pc .ds-filter-item.shape, #ds-filter-container-pc .ds-filter-item.price {
+    height: 100px;
+}
+
+#ds-filter-container-pc .ds-filter-item:last-child {
+    border-bottom: 1px solid #dfdfdf;
+}
+#ds-filter-container-pc .ds-filter-title {
+    float: left;
+    font-size: 15px;
+    color: #222;
+    font-weight: bold;
+    padding-left: 14px;
+    width: 86px;
+    height: 100%;
+    padding-top: 16px;
+    box-sizing: border-box;
+    position: relative;
+}
+#ds-filter-container-pc .ds-filter-tags {
+    float: left;
+    height: auto;
+    padding: 10px 0 10px 20px;
+    box-sizing: border-box;
+    max-width: 88%;
+    max-width: -webkit-calc(100% - 120px);
+    max-width: -moz-calc(100% - 120px);
+    max-width: calc(100% - 120px);
+}
+#ds-filter-container-pc .ds-filter-tag-theme {
+    float: left;
+    width: auto;
+    height: 40px;
+    box-sizing: border-box;
+    position: relative;
+    margin-right: 14px;
+}
+#ds-filter-container-pc .ds-filter-tag-color {
+    float: left;
+    width: 36px;
+    height: 36px;
+    position: relative;
+    margin-right: 14px;
+}
+
+#ds-filter-container-pc .ds-filter-tag-size {
+    float: left;
+    width: auto;
+    min-width: 128px;
+    height: 60px;
+    box-sizing: border-box;
+    position: relative;
+    margin: 2px 14px 10px 0;
+}
+
+#ds-filter-container-pc .ds-filter-tag-shape {
+    float: left;
+    width: auto;
+    height: 50px;
+    box-sizing: border-box;
+    position: relative;
+    margin-right: 14px;
+}
+
+#ds-filter-container-pc .ds-filter-tag-price {
+    float: left;
+    width: auto;
+    height: 100px;
+    box-sizing: border-box;
+    position: relative;
+    margin-right: 14px;
+}
+#completeButton {
+    position: absolute;
+    width: 200px;
+    top: 10%;
+    left: 80px;
+}
+.checkbox-group {
+    display: none;
+}
+input[type="radio"][name="artType"]:checked ~ .checkbox-group {
+    display: block;
+}
+.checkbox1 {
+    list-style: none;
+    margin: 0px;
+}
+
+
+#rgbValue {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    width: 200px;
+}
+#ds-filter-container-pc .ds-filter-tag-technique {
+    float: left;
+    width: auto;
+    height: 40px;
+    box-sizing: border-box;
+    position: relative;
+    margin-right: 14px;
+}
+#ds-filter-container-pc .ds-filter-tag-author {
+    float: left;
+    width: auto;
+    height: 40px;
+    box-sizing: border-box;
+    position: relative;
+    margin-right: 14px;
+}
+
+#discover_filter1 {
+    width: 1000px;
+    /*margin-top: 100px;*/
+    margin: 110px auto 0;
+    position: absolute;
+    overflow: hidden;
+    line-height: 1;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.cf {
+    display:block;
+}
+
+#ds-filter-container-pc1 .ds-filter-item {
+    border-top: 1px solid #dfdfdf;
+    border-right: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+    border-left: 7px solid #FDB56D;
+    float: left;
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+}
+#ds-filter-container-pc1 .ds-filter-item:nth-child(1), #ds-filter-container-pc1 .ds-filter-item:nth-child(2) {
+    width: 50%;
+}
+#ds-filter-container-pc1 .ds-filter-item:nth-child(1) {
+    border-right: 0;
+}
+
+#ds-filter-container-pc1 .ds-filter-item.size {
+    height: 100px;
+    overflow: hidden;
+}
+
+#ds-filter-container-pc1 .ds-filter-item.shape, #ds-filter-container-pc1 .ds-filter-item.price {
+    height: 100px;
+}
+
+#ds-filter-container-pc1 .ds-filter-item.shape, #ds-filter-container-pc1 .ds-filter-item.price {
+    height: 100px;
+}
+
+#ds-filter-container-pc1 .ds-filter-item:last-child {
+    border-bottom: 1px solid #dfdfdf;
+}
+#ds-filter-container-pc1 .ds-filter-title {
+    float: left;
+    font-size: 15px;
+    color: #222;
+    font-weight: bold;
+    padding-left: 14px;
+    width: 86px;
+    height: 100%;
+    padding-top: 16px;
+    box-sizing: border-box;
+    position: relative;
+}
+#ds-filter-container-pc1 .ds-filter-tags {
+    float: left;
+    height: auto;
+    padding: 10px 0 10px 20px;
+    box-sizing: border-box;
+    max-width: 88%;
+    max-width: -webkit-calc(100% - 120px);
+    max-width: -moz-calc(100% - 120px);
+    max-width: calc(100% - 120px);
+}
+#ds-filter-container-pc1 .ds-filter-tag-theme {
+    float: left;
+    width: auto;
+    height: 40px;
+    box-sizing: border-box;
+    position: relative;
+    margin-right: 14px;
+}
+
+#ds-filter-container-pc1 .ds-filter-tag-shape {
+    float: left;
+    width: auto;
+    height: 50px;
+    box-sizing: border-box;
+    position: relative;
+    margin-right: 14px;
+}
+
+.checkbox-group {
+    display: none;
+}
+input[type="radio"][name="artType"]:checked ~ .checkbox-group {
+    display: block;
+}
+.checkbox11 {
+    list-style: none;
+    margin: 0px;
+}
+
+#ds-filter-container-pc1 .ds-filter-tag-technique {
+    float: left;
+    width: auto;
+    height: 40px;
+    box-sizing: border-box;
+    position: relative;
+    margin-right: 14px;
+}
+.form-box #discover_filter1 {
+    top: 330px;
+    left: 50%; /* 수평 중앙 정렬을 위해 추가 */
+    transform: translateX(-50%); /* 수평 중앙 정렬을 위해 추가 */
+}
+
+
+
+

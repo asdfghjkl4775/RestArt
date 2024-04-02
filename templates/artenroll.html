@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/artenroll/main_final.css">
+    <link rel="stylesheet" href="/static/artenroll/nav_top3.css">
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Starbucks" />
+    <meta property="og:title" content="Starbucks Coffee Korea" />
+    <meta property="og:description" content="스타벅스는 세계에서 가장 큰 다국적 커피 전문점으로, 64개국에서 총 23,187개의 매점을 운영하고 있습니다." />
+    <meta property="og:image" content="./images/starbucks_seo.jpg" />
+    <meta property="og:url" content="https://starbucks.co.kr" />
+
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:site" content="Starbucks" />
+    <meta property="twitter:title" content="Starbucks Coffee Korea" />
+    <meta property="twitter:description" content="스타벅스는 세계에서 가장 큰 다국적 커피 전문점으로, 64개국에서 총 23,187개의 매점을 운영하고 있습니다." />
+    <meta property="twitter:image" content="./images/starbucks_seo.jpg" />
+    <meta property="twitter:url" content="https://starbucks.co.kr" />
+
+    <link rel="icon" href="./favicon.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<!--    <link rel="stylesheet" href="./css/main.css" />-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!--    <script defer src="./js/main.js"></script>-->
+    <meta charset="UTF-8">
+    <title>picture</title>
+    <link rel="stylesheet" href="/static/artenroll/picture.css">
+<!--    <link rel="stylesheet" href="nav_top3.css">-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style type="text/css">
+    .table_container {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap; /* 넘치는 요소들을 여러 줄로 나누도록 설정 */
+        justify-content: space-between; /* 요소들 사이의 간격을 최대화하여 정렬 */
+    }
+    .table_container .table_inform2 {
+        display:none;
+    }
+
+
+    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+      overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+      font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg .tg-baqh{background-color:#FFFFFF;text-align:center;vertical-align:top}
+    .tg .tg-kftd{background-color:#efefef;text-align:left;vertical-align:top}
+    .tg .tg-0lax{background-color:#FFFFFF;text-align:left;vertical-align:top}
+    .tg .tg-kftd1{background-color:#efefef;text-align:left;vertical-align:top;height:100px}
+    .tg .tg-0lax1{background-color:#FFFFFF;text-align:left;vertical-align:top;height:200px}
+        .addImage {
+            width: 798px;
+            height: 300px;
+            background-color: #FEEBCD;
+            border-radius: 20px 20px / 20px 20px;
+            overflow: hidden;
+            margin: 0px 10px 10px 0px;
+            z-index: 1;
+            position: relative;
+            top: 100px;
+        }
+
+        .inputImg {
+            position: absolute;
+            width: 450px;
+            height: 350px;
+            z-index: 1;
+            top: 100px;
+        }
+        .file_doc{
+            color: blue;
+            padding: 100px 100px 0px 180px;
+            left: 270px;
+            top: 200px;
+            height: 100px;
+            width: 350px;
+            position: absolute;
+            z-index: 1;
+        }
+        .select_button {
+            position: absolute;
+            top: 750px;
+            left: 47%;
+            margin: 20px;
+        }
+        .container {
+            position:absolute;
+            z-index: 1;
+            top: 370px;
+
+
+        }
+
+        .image-upload {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+        }
+
+        label {
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        #chooseFile {
+            visibility: hidden;
+        }
+
+        .fileContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .fileInput {
+            display: flex;
+            align-items: center;
+            border-bottom: solid 2px black;
+            width: 60%;
+            height: 30px;
+        }
+
+        #fileName {
+            margin-left: 5px;
+        }
+
+        .buttonContainer {
+            width: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 10px;
+            background-color: black;
+            color: white;
+            border-radius: 30px;
+            padding: 10px;
+            font-size: 0.8em;
+
+            cursor: pointer;
+        }
+
+        .img {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+            <a href="/"><img class="logo display-flex" src="/static/artenroll/RestArt.png"></a>
+
+                <ul class="main-menu">
+                    <li class="item">
+                        <div class="item__name"> 작가 </div>
+                    </li>
+                    <li class="item">
+                        <div class="item__name"> 작품보러가기 </div>
+                    </li>
+                    <li class="item">
+                        <div class="item__name">AI 작품추천</div>
+                    </li>
+                    <li class="nav__item item">
+                        <div class="item__name">커뮤니티</div>
+                    </li>
+                    <li class="nav__item item">
+                        <div class="item__name">아트컨설팅</div>
+                    </li>
+                    <li class="nav__item item">
+                        <div class="item__name">회사소개</div>
+                    </li>
+                    <div class="item__contents">
+                        <div class="contents__menu1">
+                            <ul class="inner2">
+                                <li class="contents__menu1-1"><a href="artistInform" class="menu__hover">작가소개</a></li>
+                                <li class="contents__menu1-1"><a href="artenroll" class="menu__hover">작품등록</a></li>
+                            </ul>
+                        </div>
+                        <div class="contents__menu2">
+                            <ul class="inner2">
+                                <li class="contents__menu2-1"><a href="/gallery" class="menu__hover">갤러리</a></li>
+                                <li class="contents__menu2-1"><a href="#online" class="menu__hover">온라인전시</a></li>
+                            </ul>
+                        </div>
+                        <div class="contents__menu3">
+                            <ul class="inner2">
+                                <li class="contents__menu3-1"><a href="#online" class="menu__hover">풍수지리</a></li>
+                                <li class="contents__menu3-1"><a href="#online" class="menu__hover">AI작품추천</a></li>
+                                <li class="contents__menu3-1"><a href="#AR" class="menu__hover">AR인테리어</a></li>
+                            </ul>
+                        </div>
+                        <div class="contents__menu4">
+                            <ul class="inner2">
+                                <li class="contents__menu4-1"><a href="exhibition" class="menu__hover">전시정보</a></li>
+                                <li class="contents__menu4-1"><a href="#online" class="menu__hover">인테리어공유</a></li>
+                                <li class="contents__menu4-1"><a href="#AR" class="menu__hover">리뷰</a></li>
+                            </ul>
+                        </div>
+                        <div class="contents__menu5">
+                            <ul class="inner2">
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="contents__menu6">
+                            <ul class="inner2">
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </ul>
+                <i class="ri-close-line nav__close" id="nav-close"></i>
+
+        <div class="nav__menu2 display-flex" id="nav-menu2">
+            <div id="search-ranking">
+                <h2 class="blind">실시간 검색어</h2>
+                <div class="current-rank">
+                    <span class="rank-number">1</span>
+                    <span class="rank-title">김현수</span>
+                </div>
+                <ul>
+                    <li>
+                        <span class="rank-number">1</span>
+                        <span class="rank-title">김현수</span>
+                    </li>
+                    <li>
+                        <span class="rank-number">2</span>
+                        <span class="rank-title">이민혁</span>
+                    </li>
+                    <li>
+                        <span class="rank-number">3</span>
+                        <span class="rank-title">이상준</span>
+                    </li>
+                    <li>
+                        <span class="rank-number">4</span>
+                        <span class="rank-title">이지원</span>
+                    </li>
+                    <li>
+                        <span class="rank-number">5</span>
+                        <span class="rank-title">이윤호</span>
+                    </li>
+                </ul>
+
+            </div>
+            <ul class="type1">
+                <li class="login2 nav__item">
+                    <div class="search">
+                      <input class="search-box" type="text" />
+                      <div class="material-symbols-outlined">search</div>
+                    </div>
+                </li>
+                <li class="login2 nav__item login3">
+                    <a href="login" class="nav__link2">로그인</a>
+                </li>
+                <li class="nonon login3">
+                    |
+                </li>
+                <li class="new nav__item login3">
+                    <a href="signpage" class="nav__link2">회원가입</a>
+                </li>
+            </ul>
+        </div>
+        <script>
+              const searchEl = document.querySelector(".search");
+                // const searchInputEl = document.querySelector('.search input');
+                const searchInputEl = searchEl.querySelector("input");
+
+                searchEl.addEventListener("click", function () {
+                  searchInputEl.focus(); // input 요소에 포커스 실행
+                });
+
+                searchInputEl.addEventListener("focus", function () {
+                  searchEl.classList.add("focused");
+                  searchInputEl.setAttribute("placeholder", "통합검색");
+                });
+
+                searchInputEl.addEventListener("blur", function () {
+                  searchEl.classList.remove("focused");
+                  searchInputEl.setAttribute("placeholder", "");
+                });
+
+                const badgeEl = document.querySelector("header .badges");
+
+                window.addEventListener(
+                  "scroll",
+                  _.throttle(function () {
+                    console.log(window.scrollY);
+                    if (window.scrollY > 500) {
+                      // 배지 숨기기
+                      // gsap.to(애니매이션 적용 요소, 지속시간, 옵션); / 옵션은 객체 데이터 사용 가능{}
+                      gsap.to(badgeEl, 0.6, {
+                        opacity: 0,
+                        display: "none"
+                      });
+                    } else {
+                      // 배지 보이기
+                      gsap.to(badgeEl, 0.6, {
+                        opacity: 1,
+                        display: "block"
+                      });
+                    }
+                  }, 300)
+                );
+                // _.throttle(함수, 시간)
+
+                const fadeEls = document.querySelectorAll(".visual .fade-in");
+                fadeEls.forEach(function (fadeEl, index) {
+                  // gsap.to(애니매이션 적용 요소, 지속시간, 옵션);
+                  gsap.to(fadeEl, 1, {
+                    delay: (index + 1) * 0.7, // 0.7, 1.4, 2.1, 2.7s
+                    opacity: 1
+                  });
+                });
+
+
+                // 실시간 랭킹 자바
+                window.onload = function () {
+                    var currentRank = document.querySelector("#search-ranking .current-rank");
+                    var rankList = document.querySelector("#search-ranking ul");
+                    var rankItems = rankList.querySelectorAll("li");
+                    var currentIndex = 0;
+
+                    function showNextRank() {
+                        currentRank.innerHTML = rankItems[currentIndex].innerHTML;
+                        currentIndex = (currentIndex + 1) % rankItems.length;
+                    }
+
+                    // 매 3초마다 다음 순위 표시
+                    setInterval(showNextRank, 2500);
+                };
+        </script>
+    </header>
+    <form class="inputImage picture-display-flex" method="post" enctype="multipart/form-data"> <!-- 이미지 파일 데이터에 알맞는 enctype 설정 -->
+        <div class="addImage" id="image-show"> <!-- 이미지 띄울 공간 -->
+        </div>
+            <div class="container">
+            <div class="image-upload" id="image-upload">
+
+                <form method="post" enctype="multipart/form-data">
+                    <div class="button">
+                        <label for="chooseFile">
+                            👉 CLICK HERE! 👈
+                        </label>
+                    </div>
+                    <input type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">
+                </form>
+
+                <div class="fileContainer">
+                    <div class="buttonContainer">
+                        <div class="submitButton" id="submitButton">SUBMIT</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+<div class="table_container" id="table_container">
+    <div class="table_infrom">
+        <table class="tg" style="undefined;table-layout: fixed; width: 313px">
+        <colgroup>
+            <col style="width: 110.2px">
+            <col style="width: 300.2px">
+        </colgroup>
+        <thead>
+          <tr>
+            <th class="tg-baqh" colspan="2"><span style="font-weight:bold">작가 및 작품 정보</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tg-kftd">작가 이름</td>
+            <td class="tg-0lax"><input type="text" class="name"> </td>
+          </tr>
+          <tr>
+            <td class="tg-kftd">작품 등록 일자</td>
+            <td class="tg-0lax"><div><script>
+            date = new Date().toLocaleDateString();
+            document.write(date);</script></div>
+            </td>
+          </tr>
+          <tr>
+            <td class="tg-kftd">작품 완성 일자</td>
+            <td class="tg-0lax"><input class="date" type="date"> </td>
+          </tr>
+          <tr>
+            <td class="tg-kftd">작품 사이즈</td>
+            <td class="tg-0lax"><button class="size_button" type="button" onclick="location.href='http://taeyoonart.com/xe/board_fineart_data/2541';">사이즈 표 확인하기</button>
+            <select id="selectFloor">
+                <!-- 호수 옵션들을 동적으로 추가할 예정 -->
+            </select>
+
+            <p id="selectedFloor"></p>
+
+            <script>
+                const selectFloor = document.getElementById("selectFloor");
+                const selectedFloor = document.getElementById("selectedFloor");
+
+                // 고정된 호수 옵션 추가
+                const fixedFloors = [0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 25, 30, 40, 50, 60, 80, 100, 120, 150, 200, 300, 500];
+
+                fixedFloors.forEach(floor => {
+                    const option = document.createElement("option");
+                    option.value = floor;
+                    option.text = `${floor}호`;
+                    selectFloor.add(option);
+                });
+
+            </script></td>
+          </tr>
+        </tbody>
+        </table>
+    </div>
+    <div class="table_inform2" id="table_inform2">
+        <table class="tg">
+            <colgroup>
+                <col style="width: 360.2px">
+            </colgroup>
+        <thead>
+          <tr>
+            <th class="tg-baqh" colspan="2"><span style="font-weight:bold">색상 분석</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tg-0lax1"></td>
+          </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+    <button class="select_button" type="button">작품 등록 하기</button>
+    <script>
+        function loadFile(input) {
+            let file = input.files[0]; // 선택된 파일 가져오기
+            let newImage = document.createElement("img"); //새 이미지 추가
+
+            //이미지 source 가져오기
+            newImage.src = URL.createObjectURL(file);
+            newImage.id = "img-id"
+            newImage.style.width = "100%";
+            newImage.style.height = "100%";
+            newImage.style.objectFit = "cover";
+
+            //이미지를 image-show div에 추가
+            let container = document.getElementById('image-show');
+            container.appendChild(newImage);
+        }
+        document.getElementById("submitButton").addEventListener("click", function() {
+            // Get the second table container
+            var tableInform2 = document.getElementById("table_inform2");
+
+            // If the second table is hidden, show it; otherwise, hide it
+            if (tableInform2.style.display === "none") {
+                tableInform2.style.display = "inline-block"; // Change display to inline-block for side-by-side alignment
+            } else {
+                tableInform2.style.display = "none";
+            }
+        });
+    </script>
+
+</body>
+</html>

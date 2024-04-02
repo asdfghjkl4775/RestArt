@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RestArt Main Page</title>
+    <link rel="stylesheet" href="/static/signpage/main_final.css">
+    <link rel="stylesheet" href="/static/signpage/nav_top3.css">
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Starbucks" />
+    <meta property="og:title" content="Starbucks Coffee Korea" />
+    <meta property="og:description" content="스타벅스는 세계에서 가장 큰 다국적 커피 전문점으로, 64개국에서 총 23,187개의 매점을 운영하고 있습니다." />
+    <meta property="og:image" content="./images/starbucks_seo.jpg" />
+    <meta property="og:url" content="https://starbucks.co.kr" />
+
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:site" content="Starbucks" />
+    <meta property="twitter:title" content="Starbucks Coffee Korea" />
+    <meta property="twitter:description" content="스타벅스는 세계에서 가장 큰 다국적 커피 전문점으로, 64개국에서 총 23,187개의 매점을 운영하고 있습니다." />
+    <meta property="twitter:image" content="./images/starbucks_seo.jpg" />
+    <meta property="twitter:url" content="https://starbucks.co.kr" />
+
+    <link rel="icon" href="./favicon.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<!--    <link rel="stylesheet" href="./css/main.css" />-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!--    <script defer src="./js/main.js"></script>-->
+    <meta charset="UTF-8">
+    <title>Picture</title>
+    <link rel="stylesheet" href="/static/signpage/signpage.css">
+    <style>
+    .user-form, .author-form {
+        display: none;
+    }
+    </style>
+
+</head>
+<body>
+    <header id="header">
+            <a href="/"><img class="logo display-flex" src="/static/signpage/RestArt.png"></a>
+
+                <ul class="main-menu">
+                    <li class="item">
+                        <div class="item__name"> 작가 </div>
+                    </li>
+                    <li class="item">
+                        <div class="item__name"> 작품보러가기 </div>
+                    </li>
+                    <li class="item">
+                        <div class="item__name">AI 작품추천</div>
+                    </li>
+                    <li class="nav__item item">
+                        <div class="item__name">커뮤니티</div>
+                    </li>
+                    <li class="nav__item item">
+                        <div class="item__name">아트컨설팅</div>
+                    </li>
+                    <li class="nav__item item">
+                        <div class="item__name">회사소개</div>
+                    </li>
+                    <div class="item__contents">
+                        <div class="contents__menu1">
+                            <ul class="inner2">
+                                <li class="contents__menu1-1"><a href="artistInform" class="menu__hover">작가소개</a></li>
+                                <li class="contents__menu1-1"><a href="artenroll" class="menu__hover">작품등록</a></li>
+                            </ul>
+                        </div>
+                        <div class="contents__menu2">
+                            <ul class="inner2">
+                                <li class="contents__menu2-1"><a href="/gallery" class="menu__hover">갤러리</a></li>
+                                <li class="contents__menu2-1"><a href="#online" class="menu__hover">온라인전시</a></li>
+                            </ul>
+                        </div>
+                        <div class="contents__menu3">
+                            <ul class="inner2">
+                                <li class="contents__menu3-1"><a href="#online" class="menu__hover">풍수지리</a></li>
+                                <li class="contents__menu3-1"><a href="#online" class="menu__hover">AI작품추천</a></li>
+                                <li class="contents__menu3-1"><a href="#AR" class="menu__hover">AR인테리어</a></li>
+                            </ul>
+                        </div>
+                        <div class="contents__menu4">
+                            <ul class="inner2">
+                                <li class="contents__menu4-1"><a href="exhibition" class="menu__hover">전시정보</a></li>
+                                <li class="contents__menu4-1"><a href="#online" class="menu__hover">인테리어공유</a></li>
+                                <li class="contents__menu4-1"><a href="#AR" class="menu__hover">리뷰</a></li>
+                            </ul>
+                        </div>
+                        <div class="contents__menu5">
+                            <ul class="inner2">
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="contents__menu6">
+                            <ul class="inner2">
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </ul>
+                <i class="ri-close-line nav__close" id="nav-close"></i>
+
+        <div class="nav__menu2 display-flex" id="nav-menu2">
+            <div id="search-ranking">
+                <h2 class="blind">실시간 검색어</h2>
+                <div class="current-rank">
+                    <span class="rank-number">1</span>
+                    <span class="rank-title">김현수</span>
+                </div>
+                <ul>
+                    <li>
+                        <span class="rank-number">1</span>
+                        <span class="rank-title">김현수</span>
+                    </li>
+                    <li>
+                        <span class="rank-number">2</span>
+                        <span class="rank-title">이민혁</span>
+                    </li>
+                    <li>
+                        <span class="rank-number">3</span>
+                        <span class="rank-title">이상준</span>
+                    </li>
+                    <li>
+                        <span class="rank-number">4</span>
+                        <span class="rank-title">이지원</span>
+                    </li>
+                    <li>
+                        <span class="rank-number">5</span>
+                        <span class="rank-title">이윤호</span>
+                    </li>
+                </ul>
+
+            </div>
+            <ul class="type1">
+                <li class="login2 nav__item">
+                    <div class="search">
+                      <input class="search-box" type="text" />
+                      <div class="material-symbols-outlined">search</div>
+                    </div>
+                </li>
+                <li class="login2 nav__item login3">
+                    <a href="login" class="nav__link2">로그인</a>
+                </li>
+                <li class="nonon login3">
+                    |
+                </li>
+                <li class="new nav__item login3">
+                    <a href="signpage" class="nav__link2">회원가입</a>
+                </li>
+            </ul>
+        </div>
+        <script>
+              const searchEl = document.querySelector(".search");
+                // const searchInputEl = document.querySelector('.search input');
+                const searchInputEl = searchEl.querySelector("input");
+
+                searchEl.addEventListener("click", function () {
+                  searchInputEl.focus(); // input 요소에 포커스 실행
+                });
+
+                searchInputEl.addEventListener("focus", function () {
+                  searchEl.classList.add("focused");
+                  searchInputEl.setAttribute("placeholder", "통합검색");
+                });
+
+                searchInputEl.addEventListener("blur", function () {
+                  searchEl.classList.remove("focused");
+                  searchInputEl.setAttribute("placeholder", "");
+                });
+
+                const badgeEl = document.querySelector("header .badges");
+
+                window.addEventListener(
+                  "scroll",
+                  _.throttle(function () {
+                    console.log(window.scrollY);
+                    if (window.scrollY > 500) {
+                      // 배지 숨기기
+                      // gsap.to(애니매이션 적용 요소, 지속시간, 옵션); / 옵션은 객체 데이터 사용 가능{}
+                      gsap.to(badgeEl, 0.6, {
+                        opacity: 0,
+                        display: "none"
+                      });
+                    } else {
+                      // 배지 보이기
+                      gsap.to(badgeEl, 0.6, {
+                        opacity: 1,
+                        display: "block"
+                      });
+                    }
+                  }, 300)
+                );
+                // _.throttle(함수, 시간)
+
+                const fadeEls = document.querySelectorAll(".visual .fade-in");
+                fadeEls.forEach(function (fadeEl, index) {
+                  // gsap.to(애니매이션 적용 요소, 지속시간, 옵션);
+                  gsap.to(fadeEl, 1, {
+                    delay: (index + 1) * 0.7, // 0.7, 1.4, 2.1, 2.7s
+                    opacity: 1
+                  });
+                });
+
+
+                // 실시간 랭킹 자바
+                window.onload = function () {
+                    var currentRank = document.querySelector("#search-ranking .current-rank");
+                    var rankList = document.querySelector("#search-ranking ul");
+                    var rankItems = rankList.querySelectorAll("li");
+                    var currentIndex = 0;
+
+                    function showNextRank() {
+                        currentRank.innerHTML = rankItems[currentIndex].innerHTML;
+                        currentIndex = (currentIndex + 1) % rankItems.length;
+                    }
+
+                    // 매 3초마다 다음 순위 표시
+                    setInterval(showNextRank, 2500);
+                };
+        </script>
+    </header>
+
+    <div class="wrapper mypage-display-flex">
+        <nav class="nav">
+            <div class="nav-button">
+                <button onclick="showForm('user')">사용자 회원가입</button>
+                <button onclick="showForm('author')">작가 회원가입</button>
+            </div>
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+            </div>
+        </nav>
+    </div>
+    <div class="form-box mypage-display-flex">
+        <form class="user-form" id="userForm">
+            <ul class="author_information_menu">
+                <li class="inform_menu">
+                    <label for="user_ID"></label>
+                    <input id="user_ID" name="author_ID" type="text" required autocomplete="off" placeholder="ID">
+                </li>
+                <li class="inform_menu">
+                    <label for="user_password"></label>
+                    <input id="user_password" name="user_password" type="text" required autocomplete="off" placeholder="PASSWORD">
+                </li>
+                <li class="inform_menu">
+                    <label for="user_name"></label>
+                    <input id="user_name" name="user_name" type="text" required autocomplete="off" placeholder="이름">
+                </li>
+                <li class="inform_menu">
+                <label for="user_birth"></label>
+                <input id="user_birth" name="user_birth" type="date">
+                </li>
+                <li class="inform_menu">
+                <label for="user_email"></label>
+                <input id="user_email" name="user_email" type="email" required autocomplete="off" placeholder="이메일">
+                </li>
+                <li class="inform_menu">
+                <label for="user_tel"></label>
+                <input id="user_tel" name="user_tel" type="tel" required autocomplete="off" placeholder="전화번호">
+                </li>
+            </ul>
+
+            <section id="discover_filter">
+                <div id="ds-filter-container-pc" class="cf">
+                    <div class="ds-filter-item">
+                        <div class="ds-filter-title">테마</div>
+                        <div class="ds-filter-tags cf">
+                            <div class="ds-filter-tag-theme">
+                                <input type="radio" name="artType" id="classicRadio" value="classic">
+                                <label for="classicRadio">고전</label>
+                            </div>
+                            <div class="ds-filter-tag-theme">
+                                <input type="radio" name="artType" id="modernRadio" value="modern">
+                                <label for="modernRadio">현대</label>
+                            </div>
+                            <div class="ds-filter-tag-theme checkbox-group" id="checkboxGroup">
+                                <ul class="checkbox1">
+                                    <li>
+                                        <div class="check__box"><input type="checkbox" name="category11" value="추상">추상</div>
+                                        <div class="check__box"><input type="checkbox" name="category12" value="인물">인물</div>
+                                        <div class="check__box"><input type="checkbox" name="category13" value="풍경">풍경</div>
+                                        <div class="check__box"><input type="checkbox" name="category14" value="구상">구상</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                const classicRadio = document.getElementById("classicRadio");
+                                const modernRadio = document.getElementById("modernRadio");
+                                const checkboxGroup = document.getElementById("checkboxGroup");
+
+                                function updateCheckboxGroupVisibility() {
+                                    checkboxGroup.style.display = classicRadio.checked || modernRadio.checked ? "block" : "none";
+                                }
+
+                                classicRadio.addEventListener("change", updateCheckboxGroupVisibility);
+                                modernRadio.addEventListener("change", updateCheckboxGroupVisibility);
+                            });
+                        </script>
+                    </div>
+
+                    <div class="ds-filter-item">
+                        <div class="ds-filter-title">색상</div>
+                            <div class="ds-filter-tags cf">
+                                <div class="ds-filter-tag-color">
+                                    <input type="color" id="colorPicker" value="#000000">
+                                    <div id="selectedColor"></div>
+                                    <button id="completeButton" style="display: none;">색상 선택 완료</button>
+                                    <div id="rgbValue"></div>
+
+                                    <script>
+                                        document.addEventListener("DOMContentLoaded", function () {
+                                            const colorPicker = document.getElementById("colorPicker");
+                                            const selectedColor = document.getElementById("selectedColor");
+                                            const completeButton = document.getElementById("completeButton");
+                                            const rgbValue = document.getElementById("rgbValue");
+
+                                            const initialColor = colorPicker.value;
+                                            selectedColor.style.backgroundColor = initialColor;
+
+                                            colorPicker.addEventListener("input", function () {
+                                                const chosenColor = colorPicker.value;
+                                                selectedColor.style.backgroundColor = chosenColor;
+                                                completeButton.style.display = "block";
+                                            });
+
+                                            completeButton.addEventListener("click", function () {
+                                                const chosenColor = colorPicker.value;
+                                                const rgbArray = hexToRgb(chosenColor);
+                                                const rgbString = `-> RGB 값: ${rgbArray.r}, ${rgbArray.g}, ${rgbArray.b}`;
+                                                rgbValue.textContent = rgbString;
+                                            });
+
+                                            function hexToRgb(hex) {
+                                                const bigint = parseInt(hex.substring(1), 16);
+                                                const r = (bigint >> 16) & 255;
+                                                const g = (bigint >> 8) & 255;
+                                                const b = bigint & 255;
+                                                return { r, g, b };
+                                            }
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+
+                    <div class="ds-filter-item shape">
+                        <div class="ds-filter-title">감성</div>
+                        <div class="ds-filter-tags">
+                            <div class="ds-filter-tag-shape">
+                                <input type="checkbox" class="ds-filter-tag-bt-checkbox" id="ds-filter-shape-1" name="f_o" data-context="정사각형" value="3">
+                                <label for="ds-filter-shape-1">행복</label>
+                            </div>
+                            <div class="ds-filter-tag-shape">
+                                <input type="checkbox" class="ds-filter-tag-bt-checkbox" id="ds-filter-shape-2" name="f_o" data-context="가로형" value="1">
+                                <label for="ds-filter-shape-2">기쁨</label>
+                            </div>
+                            <div class="ds-filter-tag-shape">
+                                <input type="checkbox" class="ds-filter-tag-bt-checkbox" id="ds-filter-shape-3" name="f_o" data-context="세로형" value="2">
+                                <label for="ds-filter-shape-3">파워</label>
+                            </div>
+                            <div class="ds-filter-tag-shape">
+                                <input type="checkbox" class="ds-filter-tag-bt-checkbox" id="ds-filter-shape-4" name="f_o" data-context="가변" value="4">
+                                <label for="ds-filter-shape-4">열정</label>
+                            </div>
+                            <div class="ds-filter-tag-shape">
+                                <input type="checkbox" class="ds-filter-tag-bt-checkbox" id="ds-filter-shape-5" name="f_o" data-context="가변" value="4">
+                                <label for="ds-filter-shape-4">럭셔리</label>
+                            </div>
+                            <div class="ds-filter-tag-shape">
+                                <input type="checkbox" class="ds-filter-tag-bt-checkbox" id="ds-filter-shape-6" name="f_o" data-context="가변" value="4">
+                                <label for="ds-filter-shape-4">시원</label>
+                            </div>
+                            <div class="ds-filter-tag-shape">
+                                <input type="checkbox" class="ds-filter-tag-bt-checkbox" id="ds-filter-shape-7" name="f_o" data-context="가변" value="4">
+                                <label for="ds-filter-shape-4">차분</label>
+                            </div>
+                            <div class="ds-filter-tag-shape">
+                                <input type="checkbox" class="ds-filter-tag-bt-checkbox" id="ds-filter-shape-8" name="f_o" data-context="가변" value="4">
+                                <label for="ds-filter-shape-4">고무적</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ds-filter-item technique">
+                        <div class="ds-filter-title">기법</div>
+                        <div class="ds-filter-tags">
+                            <div class="ds-filter-tag-technique">
+                                <input type="checkbox" class="ds-filter-tag-bt-checkbox" id="ds-filter-technique-1" name="f_o" data-context="정사각형" value="3">
+                                <label for="ds-filter-shape-1">판화</label>
+                            </div>
+                            <div class="ds-filter-tag-technique">
+                                <input type="checkbox" class="ds-filter-tag-bt-checkbox" id="ds-filter-technique-2" name="f_o" data-context="가로형" value="1">
+                                <label for="ds-filter-shape-2">점묘법</label>
+                            </div>
+                            <div class="ds-filter-tag-technique">
+                                <input type="checkbox" class="ds-filter-tag-bt-checkbox" id="ds-filter-technique-3" name="f_o" data-context="세로형" value="2">
+                                <label for="ds-filter-shape-3">선묘법</label>
+                            </div>
+                            <div class="ds-filter-tag-technique">
+                                <input type="checkbox" class="ds-filter-tag-bt-checkbox" id="ds-filter-technique-4" name="f_o" data-context="가변" value="4">
+                                <label for="ds-filter-shape-4">드라이</label>
+                            </div>
+                            <div class="ds-filter-tag-technique">
+                                <input type="checkbox" class="ds-filter-tag-bt-checkbox" id="ds-filter-technique-5" name="f_o" data-context="가변" value="4">
+                                <label for="ds-filter-shape-4">수채화</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="nav-button1">
+                <div class="nav-button11">
+                    <button>가입하기</button>
+                </div>
+            </div>
+        </form>
+
+
+        <form class="author-form" id="authorForm">
+            <ul class="author_information_menu">
+                <li class="inform_menu">
+                    <label for="author_name"></label>
+                    <input id="author_ID" name="author_ID" type="text" required autocomplete="off" placeholder="ID">
+                </li>
+                <li class="inform_menu">
+                    <label for="author_password"></label>
+                    <input id="author_password" name="author_password" type="text" required autocomplete="off" placeholder="PASSWORD">
+                </li>
+                <li class="inform_menu">
+                    <label for="author_name"></label>
+                    <input id="author_name" name="author_name" type="text" required autocomplete="off" placeholder="이름">
+                </li>
+                <li class="inform_menu">
+                    <label for="author_birth"></label>
+                    <input id="author_birth" name="author_birth" type="date">
+                </li>
+                <li class="inform_menu">
+                    <label for="author_email"></label>
+                    <input id="author_email" name="author_email" type="email" required autocomplete="off" placeholder="이메일">
+                </li>
+                <li class="inform_menu">
+                    <label for="author_tel"></label>
+                    <input id="author_tel" name="author_tel" type="tel" required autocomplete="off" placeholder="전화번호">
+                </li>
+                <li class="inform_menu">
+                    <label for="author_organ"></label>
+                    <input id="author_organ" name="author_organ" type="tel" required autocomplete="off" placeholder="소속">
+                </li>
+            </ul>
+
+            <section id="discover_filter1">
+                <div id="ds-filter-container-pc1" class="cf">
+                    <div class="ds-filter-item">
+                        <div class="ds-filter-title">주요 테마</div>
+                        <div class="ds-filter-tags cf">
+                            <div class="ds-filter-tag-theme">
+                                <input type="radio" name="artType" id="classicRadio1" value="classic">
+                                <label for="classicRadio1">고전</label>
+                            </div>
+                            <div class="ds-filter-tag-theme">
+                                <input type="radio" name="artType" id="modernRadio1" value="modern">
+                                <label for="modernRadio1">현대</label>
+                            </div>
+                            <div class="ds-filter-tag-theme checkbox-group" id="checkboxGroup1">
+                                <ul class="checkbox11">
+                                    <li>
+                                        <div><input type="checkbox" name="category11" value="추상">추상</div>
+                                        <div><input type="checkbox" name="category12" value="인물">인물</div>
+                                        <div><input type="checkbox" name="category13" value="풍경">풍경</div>
+                                        <div><input type="checkbox" name="category14" value="구상">구상</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                const classicRadio1 = document.getElementById("classicRadio1");
+                                const modernRadio1 = document.getElementById("modernRadio1");
+                                const checkboxGroup1 = document.getElementById("checkboxGroup1");
+
+                                function updateCheckboxGroupVisibility() {
+                                    checkboxGroup1.style.display = classicRadio1.checked || modernRadio1.checked ? "block" : "none";
+                                }
+
+                                classicRadio1.addEventListener("change", updateCheckboxGroupVisibility);
+                                modernRadio1.addEventListener("change", updateCheckboxGroupVisibility);
+                            });
+                        </script>
+                    </div>
+
+                    <div class="ds-filter-item technique">
+                        <div class="ds-filter-title">주요 기법</div>
+                        <div class="ds-filter-tags">
+                            <div class="ds-filter-tag-technique">
+                                <input type="checkbox" class="ds-filter-tag-bt-checkbox" id="ds-filter-technique-11" name="f_o" data-context="정사각형" value="3">
+                                <label for="ds-filter-technique-11">판화</label>
+                            </div>
+                            <div class="ds-filter-tag-technique">
+                                <input type="checkbox" class="ds-filter-tag-bt-checkbox" id="ds-filter-technique-21" name="f_o" data-context="가로형" value="1">
+                                <label for="ds-filter-technique-21">점묘법</label>
+                            </div>
+                            <div class="ds-filter-tag-technique">
+                                <input type="checkbox" class="ds-filter-tag-bt-checkbox" id="ds-filter-technique-31" name="f_o" data-context="세로형" value="2">
+                                <label for="ds-filter-technique-31">선묘법</label>
+                            </div>
+                            <div class="ds-filter-tag-technique">
+                                <input type="checkbox" class="ds-filter-tag-bt-checkbox" id="ds-filter-technique-41" name="f_o" data-context="가변" value="4">
+                                <label for="ds-filter-technique-41">드라이</label>
+                            </div>
+                            <div class="ds-filter-tag-technique">
+                                <input type="checkbox" class="ds-filter-tag-bt-checkbox" id="ds-filter-technique-51" name="f_o" data-context="가변" value="4">
+                                <label for="ds-filter-technique-51">수채화</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="nav-button2">
+                <div class="nav-button11">
+                    <button>가입하기</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        function showForm(type) {
+            if (type === 'user') {
+                document.getElementById('userForm').style.display = 'block';
+                document.getElementById('authorForm').style.display = 'none';
+            } else if (type === 'author') {
+                document.getElementById('userForm').style.display = 'none';
+                document.getElementById('authorForm').style.display = 'block';
+            }
+        }
+    </script>
+
+
+    </body>
+</html>

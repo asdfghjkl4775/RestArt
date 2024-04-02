@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>RestArt</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/recomm/nav_top3.css">
+    <link rel="stylesheet" href="/static/recomm/recommmain.css">
+    <link rel="stylesheet" href="/static/recomm/recommfont-awesome.min.css">
+<!--    <link rel="stylesheet" href="{{ url_for('static', filename='/recomm/recommmain.css') }}">-->
+<!--	<link rel="stylesheet" href="{{ url_for('static', filename='/recomm/recommfont-awesome.min.css') }}">-->
+</head>
+<body>
+    
+
+
+
+    <!-- Header -->
+    <header id="header" class="alt">
+        {% if not uploaded_image %}
+        <div class="inner">
+            <h1>RestArt</h1>
+            <p>RestArt만의 독창적인 작품을 추천해 드립니다.</p>
+        </div>
+        {% endif %}
+    </header>
+<!--    <form action="/upload" method="post" enctype="multipart/form-data">-->
+<!--        <input type="file" name="file">-->
+<!--        <input type="submit" value="Upload Image">-->
+<!--    </form>-->
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="file-upload" class="button" id="file-label">Choose an Image</label> <!-- id 추가 -->
+        <input type="file" name="file" id="file-upload" style="display: none;" onchange="updateLabel()"> <!-- onchange 이벤트 추가 -->
+        <input type="submit" value="Upload Image" class="button" style="margin-left: 20px;">
+    </form>
+
+
+
+
+{% if uploaded_image %}
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Banner -->
+        <section id="intro" class="main">
+            <h2>업로드한 이미지의 색 추출</h2>
+            <img src="{{ url_for('static', filename='uploads/clustered_image.png') }}" alt="Clustered Image" width="600" height="400">
+            <img src="{{ url_for('static', filename='uploads/color_bar_graph.png') }}" alt="Color Bar Graph" width="600" height="400">
+            <h1>추천된 단어:</h1>
+            <div id="words">{{ fin[0] }}, {{ fin[1] }}, {{ fin[2] }}</div>
+            <ul class="actions">
+                <li><a href="#" class="button big">Learn More</a></li>
+            </ul>
+        </section>
+
+        <!-- Items -->
+        <h2 style="text-align: center;">작품 추천</h2>
+        <section class="main items">
+            {% for image in matched_images %}
+            <article class="item">
+                <header>
+                    <a href="#"><img src="{{ url_for('static', filename=image['image_path']) }}" alt="" width="800" height="400"></a>
+                </header>
+                <p>{{ image['description'] }}</p>
+                <ul class="actions">
+                    <li><a href="#" class="button">More</a></li>
+                </ul>
+            </article>
+            {% endfor %}
+        </section>
+
+
+        <!-- CTA -->
+        <section id="cta" class="main special">
+            <h2>Etiam veroeros lorem</h2>
+            <p>Phasellus ac augue ac magna auctor tempus...</p>
+            <ul class="actions">
+                <li><a href="#" class="button big">Get Started</a></li>
+            </ul>
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <ul class="icons">
+                <!-- ... (social icons) ... -->
+            </ul>
+        </footer>
+
+    </div>
+
+    <div class="copyright">
+        Powered by: <a href="https://templated.co/">TEMPLATED.CO</a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='recommjs/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='recommjs/skel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='recommjs/util.js') }}"></script>
+    <script src="{{ url_for('static', filename='recommjs/main.js') }}"></script>
+
+       <script>
+        function showUploadButton() {
+            var uploadButton = document.getElementById('upload-button');
+            if (document.getElementById('file-upload').files.length > 0) {
+                uploadButton.style.display = 'inline'; // 파일이 선택되면 버튼 표시
+            } else {
+                uploadButton.style.display = 'none'; // 파일이 선택되지 않으면 버튼 숨김
+            }
+        }
+
+
+
+    var fin = ["{{ fin[0] }}", "{{ fin[1] }}", "{{ fin[2] }}"];
+    document.getElementById('words').textContent = ans.join(' , ');
+
+
+    </script>
+
+    <style>
+        #header:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("{{ url_for('static', filename='uploads/' ~ uploaded_image) }}");
+            background-size: 1280px 720px;  /* 이미지 크기를 1280x720으로 고정 */
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+    </style>
+
+
+{% endif %}
+
+
+</body>
+</html>

@@ -1,0 +1,429 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@500;600;700&display=swap");
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-style: normal;
+}
+body div {
+  font-family: 'Pretendard-Regular', sans-serif;
+}
+
+.display-flex {
+  display: flex;
+}
+.position-relative {
+    position: relative;
+}
+
+.banner {
+    position: relative;
+    background-color: rgba(254, 235, 205, 0.4);
+    top: 550px;
+    width: 100%;
+    height: 120px;
+}
+.banner_logo {
+    position: absolute;
+    top: 18%;
+    left: 30%;
+    height: 80px;
+    width: 110px;
+    border-radius: 20%;
+}
+.banner_ment {
+    font-family: 'Pretendard-Regular', sans-serif;
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    font-size: 30px;
+}
+.banner_id {
+    font-family: 'Pretendard-Regular', sans-serif;
+    position: absolute;
+    left: 40%;
+    top: 60%;
+    font-size: 15px;
+    color: #5F5F5F;
+}
+.best_picture2 {
+    font-family: 'Pretendard-Regular', sans-serif;
+    position: absolute;
+    top: 700px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 25px;
+    font-weight: 600;
+}
+.slider2 {
+    width: 1200px; /* 슬라이더의 너비 */
+    height: 230px; /* 슬라이더의 높이 */
+    overflow: hidden; /* 이미지가 박스 바깥으로 나가지 않도록 함 */
+    position: absolute; /* 슬라이드 위치 조정을 위함 */
+    margin: auto; /* 가운데 정렬을 위한 자동 마진 설정 */
+    left: 50%;
+    transform: translateX(-50%);
+    top: 760px;
+}
+.slides2 {
+    display: flex; /* 이미지를 가로로 나열 */
+}
+.slides2 img {
+    margin-right: 24px;
+}
+.slides2 .image6 {
+    margin-right: 0; /* image6에는 오른쪽 마진을 주지 않기 */
+}
+.slides2 img {
+    width: 180px; /* 슬라이더 너비에 맞게 조정 */
+    height: 230px; /* 슬라이더 높이에 맞게 조정 */
+    object-fit: cover; /* 이미지가 박스에 꽉 차도록 조정하되, 비율 유지 */
+}
+
+
+/* Zoom In #1 */
+.slider2 .slides2 img {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-filter: blur(0);
+  filter: blur(0);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+.slider2 .slides2 img:hover {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
+}
+
+.slides2 div {
+    position: relative;
+}
+
+.slider2 .slides2 div span {
+    font-family: 'Pretendard-Regular', sans-serif;
+    position: absolute;
+    bottom: 45%;
+    left: 45%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    color: black;
+    font-size: 15px;
+    font-weight: 500;
+    white-space: nowrap; /* 글자가 길어져도 한 줄에 뜨도록 설정 */
+}
+
+.slides2 div:hover span {
+    opacity: 1;
+}
+
+.color_picture {
+    font-family: 'Pretendard-Regular', sans-serif;
+    position: absolute;
+    top: 1115px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 25px;
+    font-weight: 600;
+}
+.best_button {
+    font-family: 'Pretendard-Regular';
+    position: absolute;
+    top: 1020px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    font-weight: 400;
+    background-color: #D8C9AC;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 8%;
+    width: 100%;
+    max-width: 200px;
+    height: 100%;
+    max-height: 40px;
+}
+.best_line{
+    position: absolute;
+    width: 1260px;
+    top: 1070px;
+    left: 51%;
+    transform: translateX(-50%);
+}
+.slider3 {
+    width: 1000px; /* 슬라이더의 너비 */
+    height: 200px; /* 슬라이더의 높이 */
+    overflow: hidden; /* 이미지가 박스 바깥으로 나가지 않도록 함 */
+    position: absolute; /* 슬라이드 위치 조정을 위함 */
+    margin: auto; /* 가운데 정렬을 위한 자동 마진 설정 */
+    left: 50%;
+    transform: translateX(-50%);
+    top: 60px;
+}
+.slides3 {
+    display: flex; /* 이미지를 가로로 나열 */
+    transition: transform 0.5s ease-in-out; /* 부드러운 전환 효과 */
+}
+.slides3 img {
+    width: 200px; /* 슬라이더 너비에 맞게 조정 */
+    height: 200px; /* 슬라이더 높이에 맞게 조정 */
+    object-fit: cover; /* 이미지가 박스에 꽉 차도록 조정하되, 비율 유지 */
+    margin-right: 50px;
+}
+.slider4 {
+    width: 1000px; /* 슬라이더의 너비 */
+    height: 200px; /* 슬라이더의 높이 */
+    overflow: hidden; /* 이미지가 박스 바깥으로 나가지 않도록 함 */
+    position: absolute; /* 슬라이드 위치 조정을 위함 */
+    margin: auto; /* 가운데 정렬을 위한 자동 마진 설정 */
+    left: 50%;
+    transform: translateX(-50%);
+    top: 270px;
+}
+.slides4 {
+    display: flex; /* 이미지를 가로로 나열 */
+    transition: transform 0.5s ease-in-out; /* 부드러운 전환 효과 */
+}
+.slides4 img {
+    width: 200px; /* 슬라이더 너비에 맞게 조정 */
+    height: 200px; /* 슬라이더 높이에 맞게 조정 */
+    object-fit: cover; /* 이미지가 박스에 꽉 차도록 조정하되, 비율 유지 */
+    margin-left: 50px;
+}
+.slides3 div {
+    position: relative;
+}
+.slider3 .slides3 div span {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    color: white;
+    font-size: 15px;
+    font-weight: 1000;
+    white-space: nowrap; /* 글자가 길어져도 한 줄에 뜨도록 설정 */
+}
+.slides4 div {
+    position: relative;
+}
+.slider4 .slides4 div span {
+    position: absolute;
+    bottom: 5%;
+    left: 25%;
+    color: white;
+    font-size: 15px;
+    font-weight: 1000;
+    white-space: nowrap; /* 글자가 길어져도 한 줄에 뜨도록 설정 */
+}
+.mood_button {
+    font-family: 'Pretendard-Regular';
+    position: absolute;
+    top: 1610px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    font-weight: 400;
+    background-color: #D8C9AC;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 8%;
+    width: 100%;
+    max-width: 200px;
+    height: 100%;
+    max-height: 40px;
+}
+.mood_line{
+    position: absolute;
+    width: 1260px;
+    top: 1660px;
+    left: 51%;
+    transform: translateX(-50%);
+}
+.best_review2 {
+    position: absolute;
+    top: 1700px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.slider5 {
+    width: 800px; /* 슬라이더의 너비 */
+    height: 200px; /* 슬라이더의 높이 */
+    overflow: hidden; /* 이미지가 박스 바깥으로 나가지 않도록 함 */
+    position: absolute; /* 슬라이드 위치 조정을 위함 */
+    margin: auto; /* 가운데 정렬을 위한 자동 마진 설정 */
+    left: 50%;
+    transform: translateX(-50%);
+    top: 1760px;
+}
+.slides5 {
+    display: flex; /* 이미지를 가로로 나열 */
+}
+.slides5 img {
+    margin-right: 100px;
+}
+.slides5 .image4-3 {
+    margin-right: 0; /* image6에는 오른쪽 마진을 주지 않기 */
+}
+.slides5 img {
+    width: 200px; /* 슬라이더 너비에 맞게 조정 */
+    height: 200px; /* 슬라이더 높이에 맞게 조정 */
+    object-fit: cover; /* 이미지가 박스에 꽉 차도록 조정하되, 비율 유지 */
+    border-radius: 20%;
+}
+.slides5 div {
+    position: relative;
+}
+.slider5 .slides5 .review_id {
+    position: absolute;
+    bottom: 5%;
+    left: 15px;
+    color: black;
+    font-size: 12px;
+    font-weight: 1000;
+    white-space: nowrap; /* 글자가 길어져도 한 줄에 뜨도록 설정 */
+}
+.slider5 .slides5 .more a {
+    position: absolute;
+    bottom: 5%;
+    right: 110px;
+    color: black;
+    font-size: 50px;
+    font-weight: 400;
+}
+.slider5 .slides5 .more a:hover {
+    color: white;
+}
+.slider5 .slides5 .more1 a {
+    position: absolute;
+    bottom: 5%;
+    right: 10px;
+    color: black;
+    font-size: 50px;
+    font-weight: 400;
+    white-space: nowrap; /* 글자가 길어져도 한 줄에 뜨도록 설정 */
+}
+.slider5 .slides5 .more1 a:hover {
+    color: white;
+}
+.review_button {
+    font-family: 'Pretendard-Regular';
+    position: absolute;
+    top: 1985px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    font-weight: 400;
+    background-color: #D8C9AC;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 8%;
+    width: 100%;
+    max-width: 200px;
+    height: 100%;
+    max-height: 40px;
+}
+.review_line{
+    position: absolute;
+    width: 1260px;
+    top: 2030px;
+    left: 51%;
+    transform: translateX(-50%);
+}
+
+.best_technique2 {
+    position: absolute;
+    top: 2065px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 25px;
+    font-weight: 600;
+}
+.best_technique3 {
+    position: absolute;
+    top: 2110px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.slider6 {
+    width: 1000px; /* 슬라이더의 너비 */
+    height: 300px; /* 슬라이더의 높이 */
+    overflow: hidden; /* 이미지가 박스 바깥으로 나가지 않도록 함 */
+    position: absolute; /* 슬라이드 위치 조정을 위함 */
+    margin: auto; /* 가운데 정렬을 위한 자동 마진 설정 */
+    left: 50%;
+    transform: translateX(-50%);
+    top: 2150px;
+}
+.slides6 {
+    display: flex; /* 이미지를 가로로 나열 */
+}
+.slides6 img {
+    margin-left: 100px;
+    margin-top: 40px;
+}
+.slides6 .image5-3 {
+    margin-right: 100px; /* image6에는 오른쪽 마진을 주지 않기 */
+}
+.slides6 img {
+    width: 200px; /* 슬라이더 너비에 맞게 조정 */
+    height: 200px; /* 슬라이더 높이에 맞게 조정 */
+    object-fit: cover; /* 이미지가 박스에 꽉 차도록 조정하되, 비율 유지 */
+    border-radius: 20%;
+    border-top: 5px solid white; /* border-top 색상 코드 추가 */
+    border-left: 5px solid white;;
+    border-right: 5px solid white;;
+    border-bottom: 5px solid white;
+}
+.slides6 img:hover {
+    border-top: 5px solid black; /* border-top 색상 코드 추가 */
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+    border-bottom: 5px solid black;
+}
+.slides6 div {
+    position: relative;
+}
+.slider6 .slides6 div .ment {
+    opacity: 0;
+	width: 260px;
+	padding: .8em;
+	color: white;
+	background: black;
+	position: absolute;
+	top: -0.1px;
+	left: 75%;
+	margin-left: -10.4em;
+	border-radius: 15px 0px;
+	transition: all .4s ease-in .3s;
+}
+.slides6 div:hover .ment {
+    opacity: 1;
+}
+.slider6 .slides6 div .ment1 {
+    opacity: 0;
+	width: 260px;
+	padding: .8em;
+	color: white;
+	background: black;
+	position: absolute;
+	top: -0.1px;
+	left: 58%;
+	margin-left: -10.4em;
+	border-radius: 15px 0px;
+	transition: all .4s ease-in .3s;
+}
+.slides6 div:hover .ment1 {
+    opacity: 1;
+}
+

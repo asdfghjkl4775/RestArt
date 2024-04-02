@@ -1,0 +1,205 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+body div {
+    font-family: 'Pretendard-Regular';
+}
+body{
+    background: url("인테리어.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 110vh;
+    background: rgba(39, 39, 39, 0.4);
+}
+
+.btn:hover{
+    background: rgba(255, 255, 255, 0.3);
+}
+#registerBtn{
+    margin-left: 15px;
+}
+.btn.white-btn{
+    background: rgba(255, 255, 255, 0.7);
+}
+.btn.btn.white-btn:hover{
+    background: rgba(255, 255, 255, 0.5);
+}
+.nav-menu-btn{
+    display: none;
+}
+
+.login-container{
+    position: absolute;
+    /*left: 4px;*/
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    transition: .5s ease-in-out;
+}
+.register-container{
+    position: absolute;
+    right: -500px;
+    width: 500px;
+    /*height: 1000px;*/
+    display: flex;
+    flex-direction: column;
+    transition: .5s ease-in-out;
+}
+.top span{
+    color: #fff;
+    /*font-size: small;*/
+    font-size: 30px;
+    margin-left:15px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+
+.top span a{
+    font-weight: 500;
+    font-size: 20px;
+    margin-left: 15px;
+    margin-top: 10px;
+    text-decoration: underline;
+    white-space: nowrap; /* 글자가 길어져도 한 줄에 뜨도록 설정 */
+    color: #fff;
+}
+
+.top header{
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+/*.register-container .top {
+    color: #fff; /* 텍스트 색상
+    font-size: 30px; /* 폰트 크기
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 추가된 부분: 수직 가운데 정렬
+    flex-direction: column; /* 추가된 부분: 요소들을 세로로 정렬
+}*/
+
+/*register-container .top span {
+    display: flex;
+    position: absolute;
+    left: 50%; /* 추가된 부분: 수직 가운데 정렬
+    transition: translateX(-50%);
+}*/
+
+/*register-container .top span a {
+    display: inline;
+    font-weight: 500;
+    font-size: 20px;
+    text-decoration: underline;
+    white-space: nowrap;
+    color: #fff;
+    margin-left: 10px; /* 추가된 부분: 링크와의 간격 조정
+}*/
+
+/* 색상 변경 */
+
+.login_button{
+    display: block;
+    position: absolute;
+    margin-top:200px;
+    margin-left:690px;
+}
+.input-field {
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    height: 50px;
+    width: 90%;
+    padding: 0 10px 0 45px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    transition: .2s ease;
+}
+.input-field:hover, .input-field:focus{
+    background: rgba(255, 255, 255, 0.25);
+}
+::-webkit-input-placeholder{
+    color: #fff;
+}
+.input-box {
+    position: relative; /* 상대 위치 설정 */
+    margin-bottom: 10px; /* 아래 여백 설정 */
+    top: 5%;
+}
+/*.register-container .input-box {
+    position: relative;
+    margin-bottom: 10px;
+    top: 43%;
+}*/
+.input-field {
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    height: 50px;
+    width: 90%;
+    padding: 0 10px 0 45px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    transition: .2s ease;
+}
+.input-box i{
+    position: relative;
+    top: -35px;
+    left: 17px;
+    color: #fff;
+}
+.submit{
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+    height: 45px;
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+.submit:hover{
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+}
+.two-col{
+    display: flex;
+    position: absolute;
+    top: 68%;
+    justify-content: space-between;
+    color: #fff;
+    font-size: small;
+    margin-top: 10px;
+}
+.two-col .one{
+    display: flex;
+    gap: 5px;
+    margin-right: 280px;
+}
+.two label a{
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+}
+.two label a:hover{
+    text-decoration: underline;
+}
+
+
