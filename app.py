@@ -256,29 +256,35 @@ def recomm():
     )
     cursor = db.cursor(dictionary=True)
 
-
-
-
     conditions = []
     for emotion in fin:
         condition = f"('{emotion}' IN (emotion1, emotion2, emotion3))"
         conditions.append(condition)
-
-
-
-
 
     query = "SELECT * FROM images WHERE " + " AND ".join(conditions)
     cursor.execute(query)
     matched_images = cursor.fetchall()
 
     for image in matched_images:
+        # 이미지 경로에서 파일 이름 추출
+        file_name = image['image_path'].split('\\')[-1]
+
+        # 언더바로 분리 가능한 경우에만 분리
+        if '_' in file_name:
+            artist_name, artwork_name = file_name.split('_', 1)
+            artwork_name = artwork_name.rsplit('.', 1)[0]  # 확장자 제거
+        else:
+            # 언더바가 없는 경우, 파일 이름 전체를 작품명으로 사용
+            artist_name = "알 수 없음"  # 작가명을 알 수 없음으로 처리
+            artwork_name = file_name.rsplit('.', 1)[0]  # 확장자 제거
+
+        image['artist_name'] = artist_name
+        image['artwork_name'] = artwork_name
+        # 이미지 경로 조정
         image['image_path'] = image['image_path'].replace('\\', '/').replace(
             'C:/Users/yunho/PycharmProjects/RestArt/static/', '')
-
     db.close()
     return render_template('recomm.html', uploaded_image=uploaded_image, fin=fin, matched_images=matched_images)
-
 
 
 def save_emotions_to_database(image_path, emotions, db_config):
@@ -302,87 +308,90 @@ def save_emotions_to_database(image_path, emotions, db_config):
 
 
 def extract_colors_and_graph(image_path, num_colors=10):
-    # 이미지 로드 및 리사이즈
-    image = imread(image_path)
-    image = resize(image, (image.shape[0] // 4, image.shape[1] // 4), anti_aliasing=True)
+    try:
+        # 이미지 로드 및 리사이즈
+        image = imread(image_path)
+        image = resize(image, (image.shape[0] // 4, image.shape[1] // 4), anti_aliasing=True)
 
-    # 이미지 데이터를 2D 배열로 변환
-    pixels = np.reshape(image, (image.shape[0] * image.shape[1], 3))
+        # 이미지 데이터를 2D 배열로 변환
+        pixels = np.reshape(image, (image.shape[0] * image.shape[1], 3))
 
-    # KMeans 클러스터링
-    kmeans = KMeans(n_clusters=num_colors)
-    kmeans.fit(pixels)
+        # KMeans 클러스터링
+        kmeans = KMeans(n_clusters=num_colors)
+        kmeans.fit(pixels)
 
-    # 클러스터 중심 색상 추출
-    colors1 = kmeans.cluster_centers_ * 255  # 정규화된 값을 원래 범위로 되돌림
-    colors = kmeans.cluster_centers_
+        # 클러스터 중심 색상 추출
+        colors1 = kmeans.cluster_centers_ * 255  # 정규화된 값을 원래 범위로 되돌림
+        colors = kmeans.cluster_centers_
 
-    # RGB 값을 문자열로 변환하여 레이블 생성
-    color_labels = [f'({int(color[0])}, {int(color[1])}, {int(color[2])})' for color in colors1]
+        # RGB 값을 문자열로 변환하여 레이블 생성
+        color_labels = [f'({int(color[0])}, {int(color[1])}, {int(color[2])})' for color in colors1]
 
-    # 각 클러스터의 비율 계산
-    counts = np.bincount(kmeans.labels_)
-    max_count = np.sum(counts)
-    percentage = (counts / max_count) * 100  # 퍼센트로 변환
+        # 각 클러스터의 비율 계산
+        counts = np.bincount(kmeans.labels_)
+        max_count = np.sum(counts)
+        percentage = (counts / max_count) * 100  # 퍼센트로 변환
 
-    # 클러스터링된 이미지 재구성 및 저장
-    clustered_pixels = np.array([colors[label] for label in kmeans.labels_])
-    clustered_image = np.reshape(clustered_pixels, (image.shape[0], image.shape[1], 3))
-    clustered_image_path = 'static/uploads/clustered_image.png'
-    plt.imsave(clustered_image_path, clustered_image)
+        # 클러스터링된 이미지 재구성 및 저장
+        clustered_pixels = np.array([colors[label] for label in kmeans.labels_])
+        clustered_image = np.reshape(clustered_pixels, (image.shape[0], image.shape[1], 3))
+        clustered_image_path = 'static/uploads/clustered_image.png'
+        plt.imsave(clustered_image_path, clustered_image)
 
-    # 세로 막대 그래프 생성
-    plt.figure(figsize=(6, 4))
-    bars = plt.bar(range(num_colors), percentage, color=colors)
+        # 세로 막대 그래프 생성
+        plt.figure(figsize=(6, 4))
+        bars = plt.bar(range(num_colors), percentage, color=colors)
 
-    # 상위 3개 클러스터에 별 표시 추가
-    top_indices = np.argsort(percentage)[-3:]  # 상위 3개 인덱스
-    for idx in top_indices:
-        plt.text(bars[idx].get_x() + bars[idx].get_width() / 2, bars[idx].get_height(), '*', ha='center', va='bottom', color='gold', fontsize=20)
+        # 상위 3개 클러스터에 별 표시 추가
+        top_indices = np.argsort(percentage)[-3:]  # 상위 3개 인덱스
+        for idx in top_indices:
+            plt.text(bars[idx].get_x() + bars[idx].get_width() / 2, bars[idx].get_height(), '*', ha='center', va='bottom', color='gold', fontsize=20)
 
-    plt.xlabel('Clusters')
-    plt.ylabel('Percentage (%)')
-    plt.title('Color Clusters')
-    plt.xticks(range(num_colors), color_labels, rotation=90)
+        plt.xlabel('Clusters')
+        plt.ylabel('Percentage (%)')
+        plt.title('Color Clusters')
+        plt.xticks(range(num_colors), color_labels, rotation=90)
 
-    # 그래프 이미지 저장
-    graph_image_path = 'static/uploads/color_bar_graph.png'
-    plt.savefig(graph_image_path, bbox_inches='tight')
-    counts = np.bincount(kmeans.labels_)
-    max_count = np.sum(counts)
-    percentage = (counts / max_count) * 100
-    cluster_centers = kmeans.cluster_centers_
-    cluster_centers_255 = cluster_centers * 255
-    list_RGB = []
-    cnt = 0
-    # 클러스터 별 RGB 값(0~255 범위)과 비율을 함께 출력
-    print("\n클러스터 별 RGB 값(0~255)과 비율:")
-    for i, (cluster_center, count) in enumerate(zip(cluster_centers_255, counts)):
-        ratio = count / pixels.shape[0]  # 전체 픽셀 대비 현재 클러스터 픽셀 비율
-        list_RGB.append([cluster_center.round(0).astype(int), ratio.round(2)])
-        if cnt == 3:
-            break
+        # 그래프 이미지 저장
+        graph_image_path = 'static/uploads/color_bar_graph.png'
+        plt.savefig(graph_image_path, bbox_inches='tight')
+        counts = np.bincount(kmeans.labels_)
+        max_count = np.sum(counts)
+        percentage = (counts / max_count) * 100
+        cluster_centers = kmeans.cluster_centers_
+        cluster_centers_255 = cluster_centers * 255
+        list_RGB = []
+        cnt = 0
+        # 클러스터 별 RGB 값(0~255 범위)과 비율을 함께 출력
+        print("\n클러스터 별 RGB 값(0~255)과 비율:")
+        for i, (cluster_center, count) in enumerate(zip(cluster_centers_255, counts)):
+            ratio = count / pixels.shape[0]  # 전체 픽셀 대비 현재 클러스터 픽셀 비율
+            list_RGB.append([cluster_center.round(0).astype(int), ratio.round(2)])
+            if cnt == 3:
+                break
 
-        cnt += 1
+            cnt += 1
 
-    sorted_list_RGB = sorted(list_RGB, key=lambda x: x[1], reverse=True)
+        sorted_list_RGB = sorted(list_RGB, key=lambda x: x[1], reverse=True)
 
-    # 상위 3개의 요소 선택 (첫 번째 요소는 가장 큰 비율을 가진 요소를 포함)
-    top_combinations = [sorted_list_RGB[0], sorted_list_RGB[1], sorted_list_RGB[2]]
-    new_list_RGB2 = [item[0] for item in sorted_list_RGB]
+        # 상위 3개의 요소 선택 (첫 번째 요소는 가장 큰 비율을 가진 요소를 포함)
+        top_combinations = [sorted_list_RGB[0], sorted_list_RGB[1], sorted_list_RGB[2]]
+        new_list_RGB2 = [item[0] for item in sorted_list_RGB]
 
-    new_list_RGB = [[new_list_RGB2[0],new_list_RGB2[1],new_list_RGB2[2]],
-                    [new_list_RGB2[0],new_list_RGB2[1],new_list_RGB2[3]],
-                    [new_list_RGB2[0],new_list_RGB2[2],new_list_RGB2[3]]]
+        new_list_RGB = [[new_list_RGB2[0],new_list_RGB2[1],new_list_RGB2[2]],
+                        [new_list_RGB2[0],new_list_RGB2[1],new_list_RGB2[3]],
+                        [new_list_RGB2[0],new_list_RGB2[2],new_list_RGB2[3]]]
 
-    # 그냥 리스트로 받아 오기
-    new_mapping = []
+        # 그냥 리스트로 받아 오기
+        new_mapping = []
 
-    for value in tuple_list:
-        for item in value:
-            if item in color_mapping2.values():
-                key = [k for k, v in color_mapping2.items() if v == item][0]
-                new_mapping.append(key)
+        for value in tuple_list:
+            for item in value:
+                if item in color_mapping2.values():
+                    key = [k for k, v in color_mapping2.items() if v == item][0]
+                    new_mapping.append(key)
+    except Exception as e:
+        print(f"Error processing {image_path}: {e}")
 
     def euclidean_distance(color1, color2):
         return math.sqrt((color1[0] - color2[0]) ** 2 + (color1[1] - color2[1]) ** 2 + (color1[2] - color2[2]) ** 2)
@@ -393,7 +402,7 @@ def extract_colors_and_graph(image_path, num_colors=10):
             dist = euclidean_distance(color1, color2)
             total_dist += dist
         return total_dist
-    print(new_list_RGB)
+
     three_list = []
     ans = []
     min_dist = None

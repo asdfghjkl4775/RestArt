@@ -205,18 +205,27 @@ a {
 }*/
 
 header .main-menu {
+  text-align: center;
+  max-width: 1200px;
   position: relative;
   bottom: 10px;
+  height:33px;
   left: 11%;
   z-index: -1;
   display: flex;
 }
 header .main-menu .item {
+    width: 138px;
+    float: left;
+    display: table;
 }
 header .main-menu .item .item__name {
-  padding: 10px 30px 8px 30px;
-  font-weight: bold;
-  font-size: 15px;
+    width: 130px;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 10 0 0 0;
+    font-weight: bold;
+    font-size: 15px;
 }
 header .main-menu .item:hover .item__name {
   background-color: #F6F6F6;
@@ -247,10 +256,17 @@ header .main-menu .item__contents .contents__menu4 .inner2 .contents__menu4-1:ho
   display: none;
 }*/
 .main-menu .item__contents {
+  background-color: #fff;
   width: 100%;
   position: absolute;
   top: 35px;
   display: none;
+}
+.main-menu .item__contents .scroll {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 .item__contents .contents__menu .inner2 .li {
     display:float;
@@ -261,13 +277,11 @@ header .main-menu .item__contents .contents__menu4 .inner2 .contents__menu4-1:ho
     display:block;
 }
 .item__contents .contents__menu1 {
-    position: absolute;
-    width: 250px;
-    height: 100px;
+    display: block;
+    float: left;
+    width: 138px;
     background-color: white;
-    left: -11.4%;
-    text-align: right;
-    z-index: 2;
+    text-align: center;
 }
 .item__contents .contents__menu1 .inner2 li {
     margin: 12px;
@@ -281,7 +295,11 @@ header .main-menu .item__contents .contents__menu4 .inner2 .contents__menu4-1:ho
     text-align: center;
     z-index: 1;
 }
+.inner2 {
+    width: 138px;
+}
 .item__contents .contents__menu2 .inner2 li {
+    text-align: center;
     margin: 12px;
 }
 .item__contents .contents__menu3 {
@@ -501,8 +519,10 @@ header .main-menu .item .item__contents .contents__texture p {
         display:none;
     }
     #header .main-menu .item{
-        width: 100%;
+        width: 138px;
+        float:left;
         text-align: center;
+        display:table;
     }
 
     #header .main-menu .item__contents {

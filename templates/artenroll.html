@@ -46,7 +46,7 @@
     }
 
 
-    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg  {border-collapse:collapse;border-spacing:0;border:none;}
     .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
       overflow:hidden;padding:10px 5px;word-break:normal;}
     .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
@@ -55,7 +55,7 @@
     .tg .tg-kftd{background-color:#efefef;text-align:left;vertical-align:top}
     .tg .tg-0lax{background-color:#FFFFFF;text-align:left;vertical-align:top}
     .tg .tg-kftd1{background-color:#efefef;text-align:left;vertical-align:top;height:100px}
-    .tg .tg-0lax1{background-color:#FFFFFF;text-align:left;vertical-align:top;height:200px}
+    .tg .tg-0lax1{background-color:#FFFFFF;text-align:left;vertical-align:top;height:142px}
         .addImage {
             width: 798px;
             height: 300px;
@@ -95,8 +95,6 @@
             position:absolute;
             z-index: 1;
             top: 370px;
-
-
         }
 
         .image-upload {
@@ -149,7 +147,6 @@
             border-radius: 30px;
             padding: 10px;
             font-size: 0.8em;
-
             cursor: pointer;
         }
 
@@ -161,8 +158,7 @@
 <body>
     <header id="header">
             <a href="/"><img class="logo display-flex" src="/static/artenroll/RestArt.png"></a>
-
-                <ul class="main-menu">
+<ul class="main-menu">
                     <li class="item">
                         <div class="item__name"> 작가 </div>
                     </li>
@@ -182,41 +178,43 @@
                         <div class="item__name">회사소개</div>
                     </li>
                     <div class="item__contents">
-                        <div class="contents__menu1">
-                            <ul class="inner2">
-                                <li class="contents__menu1-1"><a href="artistInform" class="menu__hover">작가소개</a></li>
-                                <li class="contents__menu1-1"><a href="artenroll" class="menu__hover">작품등록</a></li>
-                            </ul>
-                        </div>
-                        <div class="contents__menu2">
-                            <ul class="inner2">
-                                <li class="contents__menu2-1"><a href="/gallery" class="menu__hover">갤러리</a></li>
-                                <li class="contents__menu2-1"><a href="#online" class="menu__hover">온라인전시</a></li>
-                            </ul>
-                        </div>
-                        <div class="contents__menu3">
-                            <ul class="inner2">
-                                <li class="contents__menu3-1"><a href="#online" class="menu__hover">풍수지리</a></li>
-                                <li class="contents__menu3-1"><a href="#online" class="menu__hover">AI작품추천</a></li>
-                                <li class="contents__menu3-1"><a href="#AR" class="menu__hover">AR인테리어</a></li>
-                            </ul>
-                        </div>
-                        <div class="contents__menu4">
-                            <ul class="inner2">
-                                <li class="contents__menu4-1"><a href="exhibition" class="menu__hover">전시정보</a></li>
-                                <li class="contents__menu4-1"><a href="#online" class="menu__hover">인테리어공유</a></li>
-                                <li class="contents__menu4-1"><a href="#AR" class="menu__hover">리뷰</a></li>
-                            </ul>
-                        </div>
-                        <div class="contents__menu5">
-                            <ul class="inner2">
-                                <li></li>
-                            </ul>
-                        </div>
-                        <div class="contents__menu6">
-                            <ul class="inner2">
-                                <li></li>
-                            </ul>
+                        <div class="scroll">
+                            <div class="contents__menu1">
+                                <ul class="inner2">
+                                    <li class="contents__menu1-1"><a href="/artistInform" class="menu__hover">작가소개</a></li>
+                                    <li class="contents__menu1-1"><a href="/artenroll" class="menu__hover">작품등록</a></li>
+                                </ul>
+                            </div>
+                            <div class="contents__menu1">
+                                <ul class="inner2">
+                                    <li class="contents__menu1-1"><a href="/gallery" class="menu__hover">갤러리</a></li>
+                                    <li class="contents__menu1-1"><a href="#online" class="menu__hover">온라인전시</a></li>
+                                </ul>
+                            </div>
+                            <div class="contents__menu1">
+                                <ul class="inner2">
+                                    <li class="contents__menu1-1"><a href="#online" class="menu__hover">풍수지리</a></li>
+                                    <li class="contents__menu1-1"><a href="/recomm" class="menu__hover">AI작품추천</a></li>
+                                    <li class="contents__menu1-1"><a href="#AR" class="menu__hover">AR인테리어</a></li>
+                                </ul>
+                            </div>
+                            <div class="contents__menu1">
+                                <ul class="inner2">
+                                    <li class="contents__menu1-1"><a href="/exhibition" class="menu__hover">전시정보</a></li>
+                                    <li class="contents__menu1-1"><a href="#online" class="menu__hover">인테리어공유</a></li>
+                                    <li class="contents__menu1-1"><a href="#AR" class="menu__hover">리뷰</a></li>
+                                </ul>
+                            </div>
+                            <div class="contents__menu1">
+                                <ul class="inner2">
+                                    <li></li>
+                                </ul>
+                            </div>
+                            <div class="contents__menu1">
+                                <ul class="inner2">
+                                    <li></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
@@ -262,13 +260,13 @@
                     </div>
                 </li>
                 <li class="login2 nav__item login3">
-                    <a href="login" class="nav__link2">로그인</a>
+                    <a href="login.html" class="nav__link2">로그인</a>
                 </li>
                 <li class="nonon login3">
                     |
                 </li>
                 <li class="new nav__item login3">
-                    <a href="signpage" class="nav__link2">회원가입</a>
+                    <a href="signpage.html" class="nav__link2">회원가입</a>
                 </li>
             </ul>
         </div>

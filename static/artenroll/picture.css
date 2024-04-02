@@ -77,13 +77,13 @@ body{
 .table_infrom{
     position: relative;
     margin-top: 140px;
-    margin-left: 23%;
+    margin-left: 25.5%;
     overflow: hidden;
     float:left;
 }
 .table_inform2{
     position: absolute;
     margin-top: 140px;
-    left:55%;
+    left:52%;
     float:left;
 }

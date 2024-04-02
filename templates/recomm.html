@@ -11,12 +11,9 @@
 <!--	<link rel="stylesheet" href="{{ url_for('static', filename='/recomm/recommfont-awesome.min.css') }}">-->
 </head>
 <body>
-    
-
-
-
     <!-- Header -->
     <header id="header" class="alt">
+
         {% if not uploaded_image %}
         <div class="inner">
             <h1>RestArt</h1>
@@ -33,7 +30,6 @@
         <input type="file" name="file" id="file-upload" style="display: none;" onchange="updateLabel()"> <!-- onchange 이벤트 추가 -->
         <input type="submit" value="Upload Image" class="button" style="margin-left: 20px;">
     </form>
-
 
 
 
@@ -61,13 +57,25 @@
                 <header>
                     <a href="#"><img src="{{ url_for('static', filename=image['image_path']) }}" alt="" width="800" height="400"></a>
                 </header>
-                <p>{{ image['description'] }}</p>
+
+                <!-- 이미지 파일 이름에서 작가 이름과 작품 이름 추출 -->
+                {% set image_info = image['image_path'].split('/')[-1].split('_') %}
+                {% set artist_name = image_info[0] %}
+                {% if image_info|length > 1 %}
+                    {% set artwork_name = image_info[1].split('.')[0] %}
+                {% else %}
+                    {% set artwork_name = "정보 없음" %}
+                {% endif %}
+
+                <p>작가: {{ artist_name }}</p>
+                <p>작품: {{ artwork_name }}</p>
                 <ul class="actions">
                     <li><a href="#" class="button">More</a></li>
                 </ul>
             </article>
             {% endfor %}
         </section>
+
 
 
         <!-- CTA -->
